@@ -39,23 +39,41 @@ public class PlayerScript : MonoBehaviour
             if (Keyboard.current.aKey.isPressed)
             {
                 input.x = -1;
-                spriteRenderer.flipX = true;
+                Flip(true);
                 Animation.SetBool("stop",false);
             }
             if (Keyboard.current.dKey.isPressed)
             {
 
                 input.x = 1;
-                spriteRenderer.flipX = false;
+                Flip(false);
                 Animation.SetBool("stop",false);
             }
         }
         moveInput = input.normalized;
+
+        
     }
 
     void FixedUpdate()
     {
         rigidbodyPlayer.linearVelocity = moveInput * Speed;
         Animation.SetBool("stop", moveInput == Vector2.zero);
+    }
+
+    void Flip(bool flip)
+    {
+        if (flip)
+        {
+            var scale = transform.localScale;
+            scale.x = -1;
+            transform.localScale = scale;
+        }
+        else
+        {
+            var scale = transform.localScale;
+            scale.x = 1;
+            transform.localScale = scale;
+        }
     }
 }
