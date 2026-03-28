@@ -5,9 +5,9 @@ using UnityEngine;
 public class InformationScript : MonoBehaviour
 {
     public string targetTag = "Player";   // Тег искомых объектов
-    public float detectionRange = 0.6f;
+    public float detectionRange = 1.3f;
     public List<GameObject> nearbyEnemies = new List<GameObject>();
-    public GameObject InformationText;
+    public GameObject InformationBlock;
     void Start()
     {
         
@@ -16,9 +16,6 @@ public class InformationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var scale = transform.localScale;
-        scale.x = Math.Abs(scale.x);
-        transform.localScale = scale;
         if(!GetComponent<WeaponScript>().enabled)
         {
             GameObject[] allObjects = GameObject.FindGameObjectsWithTag(targetTag);
@@ -37,16 +34,16 @@ public class InformationScript : MonoBehaviour
 
             if (nearbyEnemies.Count > 0)
             {
-                InformationText.SetActive(true);
+                InformationBlock.SetActive(true);
             }
             else
             {
-                InformationText.SetActive(false);
+                InformationBlock.SetActive(false);
             }
         }
         else
         {
-            InformationText.SetActive(false);
+            InformationBlock.SetActive(false);
         }
     }
 }

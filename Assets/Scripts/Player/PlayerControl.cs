@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
     public float Money = 0f;
     public float Mana = 1000f;
     public float Hp = 100f;
-    public float Speed = 5.5f;
+    public float Speed = 8.5f;
     public Animator Animation;
     private Rigidbody2D rigidbodyPlayer;
     private Vector2 moveInput;

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 08eca92ef4490994baca9eac6172e6e4
+guid: 5bca801159978ae428613671d3de9368
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5049951661862699394
-    second: png-klev-club-p3g0-p-personazh-pikselnii-png-3_0
+      213: 5581964938628986974
+    second: "\u0411\u0435\u0436\u0438\u04422_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: png-klev-club-p3g0-p-personazh-pikselnii-png-3_0
+      name: "\u0411\u0435\u0436\u0438\u04422_0"
       rect:
         serializedVersion: 2
-        x: 184
-        y: 110
-        width: 816
-        height: 927
+        x: 2
+        y: 23
+        width: 176
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 281483ad748051640800000000000000
-      internalID: 5049951661862699394
+      spriteID: e587aa3898f177d40800000000000000
+      internalID: 5581964938628986974
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      png-klev-club-p3g0-p-personazh-pikselnii-png-3_0: 5049951661862699394
+      "\u0411\u0435\u0436\u0438\u04422_0": 5581964938628986974
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
