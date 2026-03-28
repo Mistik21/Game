@@ -4,21 +4,21 @@ using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
-    public float Money=0f;
-    public float Mana=1000f;
-    public float Hp=100f;
+    public float Money = 0f;
+    public float Mana = 1000f;
+    public float Hp = 100f;
     public float Speed = 5.5f;
     public Animator Animation;
     private Rigidbody2D rigidbodyPlayer;
     private Vector2 moveInput;
     private SpriteRenderer spriteRenderer;
-    
 
-    void Start() 
-    { 
-        Animation=GetComponent<Animator>();
-        rigidbodyPlayer = GetComponent<Rigidbody2D>(); 
-        spriteRenderer = GetComponent<SpriteRenderer>(); 
+
+    void Start()
+    {
+        Animation = GetComponent<Animator>();
+        rigidbodyPlayer = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -29,30 +29,31 @@ public class PlayerScript : MonoBehaviour
             if (Keyboard.current.wKey.isPressed)
             {
                 input.y = 1;
-                Animation.SetBool("stop",false);
+                Animation.SetBool("stop", false);
             }
+
             if (Keyboard.current.sKey.isPressed)
             {
                 input.y = -1;
-                Animation.SetBool("stop",false);
+                Animation.SetBool("stop", false);
             }
+
             if (Keyboard.current.aKey.isPressed)
             {
                 input.x = -1;
                 Flip(true);
-                Animation.SetBool("stop",false);
+                Animation.SetBool("stop", false);
             }
+
             if (Keyboard.current.dKey.isPressed)
             {
-
                 input.x = 1;
                 Flip(false);
-                Animation.SetBool("stop",false);
+                Animation.SetBool("stop", false);
             }
         }
-        moveInput = input.normalized;
 
-        
+        moveInput = input.normalized;
     }
 
     void FixedUpdate()

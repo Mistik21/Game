@@ -38,6 +38,16 @@ public class inventory : MonoBehaviour
             indexInventary = Math.Abs(indexInventary -1) % 2;
             ActiveInventory();
         }
+
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            if (Inventory[indexInventary])
+            {
+                Inventory[indexInventary].GetComponent<WeaponScript>().enabled = false;
+                Inventory[indexInventary].transform.parent = null;
+                Inventory[indexInventary] = null;
+            }
+        }
     }
 
     void ActiveInventory()
