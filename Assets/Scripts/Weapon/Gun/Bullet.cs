@@ -16,9 +16,8 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // Проверяем, не попала ли пуля в игрока
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("P"))
         {
-            Console.WriteLine("fdfs");
             return;
         }
         
