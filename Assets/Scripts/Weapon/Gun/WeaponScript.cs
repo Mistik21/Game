@@ -17,6 +17,7 @@ public class WeaponScript : MonoBehaviour
     private float nextTimeToFire = 0f;
     private bool isReloading = false;
     private Camera mainCamera;
+    public GameObject Player;
 
     void Start()
     {
@@ -30,16 +31,31 @@ public class WeaponScript : MonoBehaviour
     void Update()
     {
         // Перезарядка по R
-        if (Keyboard.current.rKey.wasPressedThisFrame && !isReloading && currentAmmo < maxAmmo && totalAmmo > 0)
+        if(Player != null)
         {
-            StartCoroutine(Reload());
-            return;
-        }
+            if (Keyboard.current.rKey.wasPressedThisFrame && !isReloading && currentAmmo < maxAmmo && totalAmmo > 0)
+            {
+                StartCoroutine(Reload());
+                return;
+            }
 
-        // Стрельба по ЛКМ
-        if (Mouse.current.leftButton.wasPressedThisFrame && !isReloading)
+            // Стрельба по ЛКМ
+            if (Mouse.current.leftButton.wasPressedThisFrame && !isReloading)
+            {
+                Shoot();
+            }
+
+            if (Keyboard.current.gKey.wasPressedThisFrame)
+            {
+                Player = null;
+            }
+        }
+        else
         {
-            Shoot();
+            if (Keyboard.current.eKey.wasPressedThisFrame)
+            {
+               Player=GameObject.FindGameObjectsWithTag("Player")[0]; 
+            }
         }
     }
 
