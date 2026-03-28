@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4693810389570238525}
   m_Layer: 7
   m_Name: Gun
-  m_TagString: Untagged
+  m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132010075780836635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea258ba940afb6e4fbc71cee747665f6, type: 3}
   m_Name: 
@@ -173,13 +173,14 @@ GameObject:
   - component: {fileID: 8338049368686530443}
   - component: {fileID: 5111873212747445298}
   - component: {fileID: 2362182142525652193}
+  - component: {fileID: 3499971036690678733}
   m_Layer: 0
   m_Name: Information
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8338049368686530443
 RectTransform:
   m_ObjectHideFlags: 0
@@ -343,3 +344,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 5111873212747445298}
   m_maskType: 0
+--- !u!114 &3499971036690678733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5159621379806451067}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0d60c527c799d42ade83c1e784e897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TextDirection

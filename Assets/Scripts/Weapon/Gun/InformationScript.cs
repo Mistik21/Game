@@ -10,7 +10,6 @@ public class InformationScript : MonoBehaviour
     public GameObject InformationBlock;
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -35,14 +34,17 @@ public class InformationScript : MonoBehaviour
             if (nearbyEnemies.Count > 0)
             {
                 InformationBlock.SetActive(true);
+                InformationBlock.GetComponent<TextDirection>().enabled = true;
             }
             else
             {
+                InformationBlock.GetComponent<TextDirection>().enabled = false;
                 InformationBlock.SetActive(false);
             }
         }
         else
         {
+            InformationBlock.GetComponent<TextDirection>().enabled = false;
             InformationBlock.SetActive(false);
         }
     }
