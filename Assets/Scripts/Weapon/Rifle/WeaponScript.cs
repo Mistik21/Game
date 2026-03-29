@@ -8,19 +8,20 @@ namespace Rifle
 {
     public class WeaponScript : MonoBehaviour
     {
-        [Header("Настройки стрельбы")] public float fireRate = 0.2f;
+        [Header("Настройки стрельбы")] public float fireRate = 0.15f;
         public float bulletForce = 20f;
 
         [Header("Патроны")] public GameObject bulletPrefab;
         public Transform firePoint;
         public int maxAmmo = 30;
         public int currentAmmo;
-        public int totalAmmo = 180;
+        private int totalAmmo;
         public int ammoPerReload = 30;
 
         private float nextTimeToFire = 0f;
         private bool isReloading = false;
         private Camera mainCamera;
+
 
         void Start()
         {
@@ -37,6 +38,7 @@ namespace Rifle
             Transform parentTransform = transform.parent;
             if (parentTransform)
             {
+                totalAmmo = parentTransform.GetComponent<PlayerScript>().Ammo;
                 if (Keyboard.current.rKey.wasPressedThisFrame && !isReloading && currentAmmo < maxAmmo && totalAmmo > 0)
                 {
                     StartCoroutine(Reload());
@@ -107,6 +109,7 @@ namespace Rifle
             Destroy(bullet, 3f);
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         IEnumerator Reload()
         {
             isReloading = true;
@@ -121,10 +124,10 @@ namespace Rifle
             int ammoToReload = Mathf.Min(ammoToAdd, neededAmmo);
 
             currentAmmo += ammoToReload;
-            totalAmmo -= ammoToReload;
-
-            if (totalAmmo < 0) totalAmmo = 0;
-
+            transform.parent.GetComponent<PlayerScript>().Ammo-= ammoToReload;
+            
+            if (transform.parent.GetComponent<PlayerScript>().Ammo < 0) transform.parent.GetComponent<PlayerScript>().Ammo = 0;
+            totalAmmo = transform.parent.GetComponent<PlayerScript>().Ammo;
             isReloading = false;
         }
 

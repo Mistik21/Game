@@ -15,7 +15,7 @@ namespace Gun
         public Transform firePoint;
         public int maxAmmo = 12;
         public int currentAmmo;
-        public int totalAmmo = 60;
+        private int totalAmmo;
         public int ammoPerReload = 12;
 
         private float nextTimeToFire = 0f;
@@ -38,6 +38,7 @@ namespace Gun
             Transform parentTransform = transform.parent;
             if (parentTransform)
             {
+                totalAmmo = parentTransform.GetComponent<PlayerScript>().Ammo;
                 if (Keyboard.current.rKey.wasPressedThisFrame && !isReloading && currentAmmo < maxAmmo && totalAmmo > 0)
                 {
                     StartCoroutine(Reload());
@@ -108,6 +109,7 @@ namespace Gun
             Destroy(bullet, 3f);
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         IEnumerator Reload()
         {
             isReloading = true;
@@ -122,10 +124,10 @@ namespace Gun
             int ammoToReload = Mathf.Min(ammoToAdd, neededAmmo);
 
             currentAmmo += ammoToReload;
-            totalAmmo -= ammoToReload;
-
-            if (totalAmmo < 0) totalAmmo = 0;
-
+            transform.parent.GetComponent<PlayerScript>().Ammo-= ammoToReload;
+            
+            if (transform.parent.GetComponent<PlayerScript>().Ammo < 0) transform.parent.GetComponent<PlayerScript>().Ammo = 0;
+            totalAmmo = transform.parent.GetComponent<PlayerScript>().Ammo;
             isReloading = false;
         }
 

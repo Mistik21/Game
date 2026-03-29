@@ -523,6 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   Money: 0
+  Ammo: 200
   Mana: 1000
   Hp: 100
   Speed: 8.5

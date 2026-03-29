@@ -2,9 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+
 public class PlayerScript : MonoBehaviour
 {
     public float Money = 0f;
+    public int Ammo = 200;
     public float Mana = 1000f;
     public float Hp = 100f;
     public float Speed = 8.5f;
