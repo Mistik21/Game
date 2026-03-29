@@ -5,6 +5,7 @@ namespace Sword
 {
     public class Sword : MonoBehaviour
     {
+        public Animator Animation;
         [Header("Настройки атаки")] public int damage = 25;
         public float attackRange = 10.5f;
         public float attackRate = 5f;
@@ -22,6 +23,7 @@ namespace Sword
                 if (Mouse.current.leftButton.wasPressedThisFrame && Time.time >= nextAttackTime)
                 {
                     Attack();
+                    Animation.Play("Base Layer.Hit", 0, 0f);
                     nextAttackTime = Time.time + attackRate;
                 }
             }
@@ -35,14 +37,9 @@ namespace Sword
             // Нанесение урона
             foreach (Collider2D enemy in hitEnemies)
             {
-                Debug.Log("sese");
                 enemy.GetComponent<NPCScript>().Hp-=damage;
             }
-
-            if (hitEnemies.Length == 0)
-            {
-                Debug.Log("Промах!");
-            }
+            
         }
 
         // Визуализация радиуса атаки в редакторе

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6696139160000239348}
   - component: {fileID: 9206217990154581935}
   - component: {fileID: 7812177531319260664}
+  - component: {fileID: 6765088585438755741}
   m_Layer: 10
   m_Name: Sword
   m_TagString: PlayerWeapon
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1067472756599703631}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.12951808, w: 0.99157715}
-  m_LocalPosition: {x: 5.34, y: -3.96, z: 0}
+  m_LocalPosition: {x: 8.89, y: -3.68, z: 0}
   m_LocalScale: {x: 1.2775809, y: 0.9151301, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1907593904, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+  m_Sprite: {fileID: -3491581816662254554, guid: 581af81277a9e57428b102d0ba621347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97905f5e2f7be9246902528ba78685cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sword
+  Animation: {fileID: 6765088585438755741}
   damage: 25
   attackRange: 1
   attackRate: 1
@@ -130,6 +132,28 @@ MonoBehaviour:
   detectionRange: 1.3
   nearbyEnemies: []
   InformationBlock: {fileID: 7075613384998427527}
+--- !u!95 &6765088585438755741
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067472756599703631}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f99ca47bb5fd314fb74cd2c0d77f46a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1690673292274204432
 GameObject:
   m_ObjectHideFlags: 0
