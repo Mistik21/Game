@@ -6,10 +6,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
-    public float Money = 0f;
+    public float Money = 2f;
     public int Ammo = 200;
     public float Mana = 1000f;
+    public float MaxMana = 1000f;
     public float Hp = 100f;
+    public float MaxHp = 100f;
     public float Speed = 8.5f;
     public Animator Animation;
     private Rigidbody2D rigidbodyPlayer;
