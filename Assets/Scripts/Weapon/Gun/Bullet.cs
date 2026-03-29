@@ -22,6 +22,7 @@ namespace Gun
             {
                 Destroy(gameObject);
             }
+            
         }
 
         void OnBecameInvisible()
