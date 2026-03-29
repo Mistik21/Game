@@ -7,7 +7,7 @@ namespace Sword
     {
         [Header("Настройки атаки")] public int damage = 25;
         public float attackRange = 10.5f;
-        public float attackRate = 100f;
+        public float attackRate = 5f;
         private float nextAttackTime = 0f;
 
         [Header("Точка удара")] public Transform attackPoint;
@@ -30,11 +30,12 @@ namespace Sword
         void Attack()
         {
             // Поиск врагов в радиусе атаки
-            Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
             // Нанесение урона
-            foreach (Collider enemy in hitEnemies)
+            foreach (Collider2D enemy in hitEnemies)
             {
+                Debug.Log("sese");
                 enemy.GetComponent<NPCScript>().Hp-=damage;
             }
 
