@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 
-namespace Gun
+namespace Rifle
 {
     public class WeaponScript : MonoBehaviour
     {
@@ -13,15 +13,14 @@ namespace Gun
 
         [Header("Патроны")] public GameObject bulletPrefab;
         public Transform firePoint;
-        public int maxAmmo = 12;
+        public int maxAmmo = 30;
         public int currentAmmo;
-        public int totalAmmo = 60;
-        public int ammoPerReload = 12;
+        public int totalAmmo = 180;
+        public int ammoPerReload = 30;
 
         private float nextTimeToFire = 0f;
         private bool isReloading = false;
         private Camera mainCamera;
-
 
         void Start()
         {
@@ -45,7 +44,7 @@ namespace Gun
                 }
 
                 // Стрельба по ЛКМ
-                if (Mouse.current.leftButton.wasPressedThisFrame && !isReloading)
+                if (Mouse.current.leftButton.isPressed && !isReloading)
                 {
                     Shoot();
                 }
