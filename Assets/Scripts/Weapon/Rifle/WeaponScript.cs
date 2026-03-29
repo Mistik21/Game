@@ -114,20 +114,22 @@ namespace Rifle
         {
             isReloading = true;
 
-            // Время перезарядки
-            float reloadTime = 1.5f;
-            yield return new WaitForSeconds(reloadTime);
 
             // Добавляем патроны
             int ammoToAdd = Mathf.Min(ammoPerReload, totalAmmo);
             int neededAmmo = maxAmmo - currentAmmo;
             int ammoToReload = Mathf.Min(ammoToAdd, neededAmmo);
 
-            currentAmmo += ammoToReload;
-            transform.parent.GetComponent<PlayerScript>().Ammo-= ammoToReload;
-            
-            if (transform.parent.GetComponent<PlayerScript>().Ammo < 0) transform.parent.GetComponent<PlayerScript>().Ammo = 0;
+            transform.parent.GetComponent<PlayerScript>().Ammo -= ammoToReload;
+
+            if (transform.parent.GetComponent<PlayerScript>().Ammo < 0)
+                transform.parent.GetComponent<PlayerScript>().Ammo = 0;
             totalAmmo = transform.parent.GetComponent<PlayerScript>().Ammo;
+
+            // Время перезарядки
+            float reloadTime = 1.5f;
+            yield return new WaitForSeconds(reloadTime);
+            currentAmmo += ammoToReload;
             isReloading = false;
         }
 
