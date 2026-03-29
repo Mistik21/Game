@@ -22,6 +22,11 @@ namespace Gun
             {
                 Destroy(gameObject);
             }
+            if (other.CompareTag("Enemy"))
+            {
+                other.GetComponent<NPCScript>().Hp-=damage;
+                Destroy(gameObject);
+            }
         }
 
         void OnBecameInvisible()
