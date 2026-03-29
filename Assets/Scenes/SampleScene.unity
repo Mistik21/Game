@@ -132,6 +132,10 @@ PrefabInstance:
       value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 7629990776033648681, guid: 21c9e1e014d85ae49b35787110583dc6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7629990776033648681, guid: 21c9e1e014d85ae49b35787110583dc6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.8835485
       objectReference: {fileID: 0}
