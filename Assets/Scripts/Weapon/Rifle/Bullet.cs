@@ -18,14 +18,10 @@ namespace Rifle
         void OnTriggerEnter2D(Collider2D other)
         {
             // Проверяем, не попала ли пуля в игрока
-            if (other.CompareTag("P"))
+            if (other.CompareTag("Wall"))
             {
-                return;
+                Destroy(gameObject);
             }
-
-
-            // Уничтожаем пулю
-            Destroy(gameObject);
         }
 
         void OnBecameInvisible()

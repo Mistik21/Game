@@ -18,8 +18,9 @@ namespace Gun
         void OnTriggerEnter2D(Collider2D other)
         {
             // Проверяем, не попала ли пуля в игрока
-            if (other.CompareTag("P"))
+            if (other.CompareTag("Wall"))
             {
+                Destroy(gameObject);
                 return;
             }
 
