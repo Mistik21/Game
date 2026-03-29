@@ -6,8 +6,8 @@ namespace Sword
     public class Sword : MonoBehaviour
     {
         [Header("Настройки атаки")] public int damage = 25;
-        public float attackRange = 1.5f;
-        public float attackRate = 1f;
+        public float attackRange = 10.5f;
+        public float attackRate = 100f;
         private float nextAttackTime = 0f;
 
         [Header("Точка удара")] public Transform attackPoint;
@@ -33,15 +33,10 @@ namespace Sword
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
             // Нанесение урона
-            //foreach (Collider enemy in hitEnemies)
-            //{
-            //    EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
-            //    if (enemyHealth != null)
-            //    {
-            //        enemyHealth.TakeDamage(damage);
-            //        Debug.Log("Удар по " + enemy.name + " нанес " + damage + " урона");
-            //    }
-            //}
+            foreach (Collider enemy in hitEnemies)
+            {
+                enemy.GetComponent<NPCScript>().Hp-=damage;
+            }
 
             if (hitEnemies.Length == 0)
             {
