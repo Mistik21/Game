@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-namespace Rifle
+namespace Sword
 {
     public class TextDirection : MonoBehaviour
     {
