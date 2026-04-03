@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Gun
+namespace RiflePlayer
 {
     public class InformationScript : MonoBehaviour
     {

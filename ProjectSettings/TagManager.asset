@@ -7,6 +7,7 @@ TagManager:
   - PlayerWeapon
   - Wall
   - Enemy
+  - NPCWeapon
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Enemies
   - Player
   - BulletPlayer
-  - 
+  - BulletNPC
   - Weapon
   - 
   - 

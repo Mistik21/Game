@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-namespace Rifle
+namespace GunNPC
 {
     public class Bullet : MonoBehaviour
     {
@@ -22,9 +22,9 @@ namespace Rifle
             {
                 Destroy(gameObject);
             }
-            if (other.CompareTag("Enemy"))
+            if (other.CompareTag("Player"))
             {
-                other.GetComponent<NPCScript>().Hp-=damage;
+                other.GetComponent<PlayerScript>().Hp-=damage;
                 Destroy(gameObject);
             }
         }

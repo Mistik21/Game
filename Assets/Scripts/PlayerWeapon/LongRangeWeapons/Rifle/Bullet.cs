@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-namespace Gun
+namespace RiflePlayer
 {
     public class Bullet : MonoBehaviour
     {

@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 
-namespace Rifle
+namespace GunPlayer
 {
     public class WeaponScript : MonoBehaviour
     {
-        [Header("Настройки стрельбы")] public float fireRate = 0.15f;
+        [Header("Настройки стрельбы")] public float fireRate = 0.2f;
         public float bulletForce = 20f;
 
         [Header("Патроны")] public GameObject bulletPrefab;
         public Transform firePoint;
-        public int maxAmmo = 30;
+        public int maxAmmo = 12;
         public int currentAmmo;
         private int totalAmmo;
-        public int ammoPerReload = 30;
+        public int ammoPerReload = 12;
 
         private float nextTimeToFire = 0f;
         private bool isReloading = false;
@@ -46,7 +46,7 @@ namespace Rifle
                 }
 
                 // Стрельба по ЛКМ
-                if (Mouse.current.leftButton.isPressed && !isReloading)
+                if (Mouse.current.leftButton.wasPressedThisFrame && !isReloading)
                 {
                     Shoot();
                 }
