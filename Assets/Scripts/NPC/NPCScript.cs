@@ -31,7 +31,7 @@ public class NPCScript : MonoBehaviour
         navMeshAgent.SetDestination(player.transform.position);
         float distance = Vector2.Distance(transform.position, player.transform.position);
         if (distance > MinDistanceToPlayer ||
-            IsWallBetween(player.transform, transform, LayerMask.GetMask("Wall", "Obstacle")))
+            IsWallBetween(LayerMask.GetMask("Wall", "Obstacle")))
         {
             // Игрок далеко — идём к нему
             navMeshAgent.SetDestination(player.transform.position);
@@ -46,10 +46,10 @@ public class NPCScript : MonoBehaviour
         DirectionOfTheModel();
     }
 
-    bool IsWallBetween(Transform player, Transform npc, LayerMask wallLayer)
+    public bool IsWallBetween(LayerMask wallLayer)
     {
-        Vector2 start = player.position;
-        Vector2 end = npc.position;
+        Vector2 start = player.transform.position;
+        Vector2 end = transform.position;
 
         // Делаем Linecast от игрока к NPC
         RaycastHit2D[] hits = Physics2D.LinecastAll(start, end);
@@ -58,7 +58,7 @@ public class NPCScript : MonoBehaviour
         foreach (RaycastHit2D hit in hits)
         {
             // Пропускаем самого игрока и NPC
-            if (hit.transform == player || hit.transform == npc)
+            if (hit.transform == player.transform || hit.transform == transform)
                 continue;
 
             // Если это стена - возвращаем true

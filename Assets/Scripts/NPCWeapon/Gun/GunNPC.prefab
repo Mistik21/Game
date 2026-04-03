@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3414741e4a4cfdb2f79a142850e855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunNPC.WeaponScript
-  fireRate: 0.15
-  bulletForce: 20
+  fireRate: 1
+  bulletForce: 11.5
   bulletPrefab: {fileID: 2209259742136637175, guid: e83da62fb6176984c88cc60de6a5bc51, type: 3}
   firePoint: {fileID: 576749948128932661}
   maxAmmo: 30

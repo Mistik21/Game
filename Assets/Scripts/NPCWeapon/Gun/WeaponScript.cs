@@ -8,8 +8,8 @@ namespace GunNPC
 {
     public class WeaponScript : MonoBehaviour
     {
-        [Header("Настройки стрельбы")] public float fireRate = 0.15f;
-        public float bulletForce = 20f;
+        [Header("Настройки стрельбы")] public float fireRate = 1.3f;
+        public float bulletForce = 11.5f;
 
         [Header("Патроны")] public GameObject bulletPrefab;
         public Transform firePoint;
@@ -33,13 +33,20 @@ namespace GunNPC
 
         void Update()
         {
-            // Перезарядка по R
+            Transform parentTransform = transform.parent;
+            if (parentTransform)
+            {
                 if (!isReloading && currentAmmo < maxAmmo)
                 {
                     StartCoroutine(Reload());
                     return;
                 }
-                Shoot();
+
+                if (!parentTransform.GetComponent<NPCScript>().IsWallBetween(LayerMask.GetMask("Wall", "Obstacle")))
+                {
+                    Shoot();
+                }
+            }
         }
 
         void Shoot()
