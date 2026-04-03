@@ -279,6 +279,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7854039212775241555, guid: 21c9e1e014d85ae49b35787110583dc6, type: 3}
+      propertyPath: m_Speed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854039212775241555, guid: 21c9e1e014d85ae49b35787110583dc6, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -3174,6 +3182,10 @@ PrefabInstance:
     - target: {fileID: 3463416893219537583, guid: 4b0ed21b19c7875499b3c2e12b8317e5, type: 3}
       propertyPath: m_Name
       value: GunNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612709672234377381, guid: 4b0ed21b19c7875499b3c2e12b8317e5, type: 3}
+      propertyPath: fireRate
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 7657364951533616059, guid: 4b0ed21b19c7875499b3c2e12b8317e5, type: 3}
       propertyPath: m_LocalPosition.x
