@@ -22,6 +22,7 @@ public class NPCScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.rotation = new Quaternion();
         if (Hp <= 0)
         {
             enabled = false;

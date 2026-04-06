@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 
 
 public class PlayerScript : MonoBehaviour
@@ -28,6 +28,12 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+        if (Hp <= 0)
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
+        }
+        
         var input = Vector2.zero;
         if (Keyboard.current != null)
         {
@@ -59,6 +65,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         moveInput = input.normalized;
+        
     }
 
     void FixedUpdate()
@@ -80,6 +87,14 @@ public class PlayerScript : MonoBehaviour
             var scale = transform.localScale;
             scale.x = 1;
             transform.localScale = scale;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        // other — это объект-триггер, в который вошёл игрок
+        if (other.CompareTag("Door"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }
