@@ -16,15 +16,18 @@ namespace Sword
 
         void Update()
         {
-            Transform parentTransform = transform.parent;
-            if (parentTransform)
+            if (Time.timeScale != 0f)
             {
-                // Атака по левой кнопке мыши
-                if (Mouse.current.leftButton.wasPressedThisFrame && Time.time >= nextAttackTime)
+                Transform parentTransform = transform.parent;
+                if (parentTransform)
                 {
-                    Attack();
-                    Animation.Play("Base Layer.Hit", 0, 0f);
-                    nextAttackTime = Time.time + attackRate;
+                    // Атака по левой кнопке мыши
+                    if (Mouse.current.leftButton.wasPressedThisFrame && Time.time >= nextAttackTime)
+                    {
+                        Attack();
+                        Animation.Play("Base Layer.Hit", 0, 0f);
+                        nextAttackTime = Time.time + attackRate;
+                    }
                 }
             }
         }

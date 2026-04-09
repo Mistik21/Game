@@ -31,33 +31,38 @@ public class inventory : MonoBehaviour
 
     void Update()
     {
-        var scroll = Mouse.current.scroll.ReadValue().y;
-        if (scroll > 0)
+        if (Time.timeScale != 0f)
         {
-            DeactivateInventory();
-            indexInventary = (indexInventary + 1) % 2;
-            ActiveInventory();
-        }
-        else if (scroll < 0)
-        {
-            DeactivateInventory();
-            indexInventary = Math.Abs(indexInventary -1) % 2;
-            ActiveInventory();
-        }
-
-        if (Keyboard.current.gKey.wasPressedThisFrame)
-        {
-            if (Inventory[indexInventary])
+            var scroll = Mouse.current.scroll.ReadValue().y;
+            if (scroll > 0)
             {
-                Inventory[indexInventary].transform.parent = null;
-                Inventory[indexInventary] = null;
+                DeactivateInventory();
+                indexInventary = (indexInventary + 1) % 2;
+                ActiveInventory();
+            }
+            else if (scroll < 0)
+            {
+                DeactivateInventory();
+                indexInventary = Math.Abs(indexInventary - 1) % 2;
+                ActiveInventory();
+            }
+
+            if (Keyboard.current.gKey.wasPressedThisFrame)
+            {
+                if (Inventory[indexInventary])
+                {
+                    Inventory[indexInventary].transform.parent = null;
+                    Inventory[indexInventary] = null;
+                }
+            }
+
+            if (!Inventory[indexInventary])
+            {
+                PickUpWeapon();
             }
         }
-        if(!Inventory[indexInventary])
-        {
-            PickUpWeapon();
-        }
     }
+
     void PickUpWeapon()
     {
         GameObject[] allObjects = GameObject.FindGameObjectsWithTag(targetTag);

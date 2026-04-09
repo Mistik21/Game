@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class PlayerScript : MonoBehaviour
@@ -17,6 +18,8 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D rigidbodyPlayer;
     private Vector2 moveInput;
     private SpriteRenderer spriteRenderer;
+    public bool isPaused = false;
+    private GameObject Overlay;
 
 
     void Start()
@@ -37,30 +40,45 @@ public class PlayerScript : MonoBehaviour
         var input = Vector2.zero;
         if (Keyboard.current != null)
         {
-            if (Keyboard.current.wKey.isPressed)
+            if (!isPaused)
             {
-                input.y = 1;
-                Animation.SetBool("stop", false);
-            }
+                if (Keyboard.current.wKey.isPressed)
+                {
+                    input.y = 1;
+                    Animation.SetBool("stop", false);
+                }
 
-            if (Keyboard.current.sKey.isPressed)
-            {
-                input.y = -1;
-                Animation.SetBool("stop", false);
-            }
+                if (Keyboard.current.sKey.isPressed)
+                {
+                    input.y = -1;
+                    Animation.SetBool("stop", false);
+                }
 
-            if (Keyboard.current.aKey.isPressed)
-            {
-                input.x = -1;
-                Flip(true);
-                Animation.SetBool("stop", false);
-            }
+                if (Keyboard.current.aKey.isPressed)
+                {
+                    input.x = -1;
+                    Flip(true);
+                    Animation.SetBool("stop", false);
+                }
 
-            if (Keyboard.current.dKey.isPressed)
+                if (Keyboard.current.dKey.isPressed)
+                {
+                    input.x = 1;
+                    Flip(false);
+                    Animation.SetBool("stop", false);
+                }
+
+                if (Keyboard.current.escapeKey.wasReleasedThisFrame)
+                {
+                    PauseGame();
+                }
+            }
+            else
             {
-                input.x = 1;
-                Flip(false);
-                Animation.SetBool("stop", false);
+                if (Keyboard.current.escapeKey.wasReleasedThisFrame && isPaused)
+                {
+                    ResumeGame();
+                }
             }
         }
 
@@ -96,5 +114,34 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+    }
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        isPaused = true;
+        CreateDarkOverlay();
+        GameObject.Find("Canvas").transform.Find("PauseMenu").gameObject.SetActive(true);
+        Debug.Log("Игра на паузе");
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        isPaused = false;
+        GameObject.Find("Canvas").transform.Find("PauseMenu").gameObject.SetActive(false);
+        Destroy(Overlay);
+    }
+    void CreateDarkOverlay()
+    {
+        GameObject overlay = new GameObject("DarkOverlay");
+        overlay.transform.SetParent(GameObject.Find("Canvas").transform);
+        Image image = overlay.AddComponent<Image>();
+        image.color = new Color(0, 0, 0, 0.75f); // черный, 50% прозрачности
+    
+        RectTransform rect = overlay.GetComponent<RectTransform>();
+        rect.anchorMin = Vector2.zero;
+        rect.anchorMax = Vector2.one;
+        rect.sizeDelta = Vector2.zero;
+        overlay.transform.SetSiblingIndex(1);
+        Overlay= overlay;
     }
 }

@@ -35,20 +35,24 @@ namespace GunPlayer
         void Update()
         {
             // Перезарядка по R
-            Transform parentTransform = transform.parent;
-            if (parentTransform)
+            if (Time.timeScale != 0f)
             {
-                totalAmmo = parentTransform.GetComponent<PlayerScript>().Ammo;
-                if (Keyboard.current.rKey.wasPressedThisFrame && !isReloading && currentAmmo < maxAmmo && totalAmmo > 0)
+                Transform parentTransform = transform.parent;
+                if (parentTransform)
                 {
-                    StartCoroutine(Reload());
-                    return;
-                }
+                    totalAmmo = parentTransform.GetComponent<PlayerScript>().Ammo;
+                    if (Keyboard.current.rKey.wasPressedThisFrame && !isReloading && currentAmmo < maxAmmo &&
+                        totalAmmo > 0)
+                    {
+                        StartCoroutine(Reload());
+                        return;
+                    }
 
-                // Стрельба по ЛКМ
-                if (Mouse.current.leftButton.wasPressedThisFrame && !isReloading)
-                {
-                    Shoot();
+                    // Стрельба по ЛКМ
+                    if (Mouse.current.leftButton.wasPressedThisFrame && !isReloading)
+                    {
+                        Shoot();
+                    }
                 }
             }
         }
