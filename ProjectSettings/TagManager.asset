@@ -46,7 +46,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Text
+  - name: Darkness
     uniqueID: 328800579
     locked: 0
   m_RenderingLayers:
