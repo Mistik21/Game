@@ -42,6 +42,14 @@ public class PlayerScript : MonoBehaviour
         {
             if (!isPaused)
             {
+                if (GetMouseWorldPosition().x < transform.position.x)
+                {
+                    Flip(true);
+                }
+                else
+                {
+                    Flip(false);
+                }
                 if (Keyboard.current.wKey.isPressed)
                 {
                     input.y = 1;
@@ -57,14 +65,12 @@ public class PlayerScript : MonoBehaviour
                 if (Keyboard.current.aKey.isPressed)
                 {
                     input.x = -1;
-                    Flip(true);
                     Animation.SetBool("stop", false);
                 }
 
                 if (Keyboard.current.dKey.isPressed)
                 {
                     input.x = 1;
-                    Flip(false);
                     Animation.SetBool("stop", false);
                 }
 
@@ -143,5 +149,12 @@ public class PlayerScript : MonoBehaviour
         rect.sizeDelta = Vector2.zero;
         overlay.transform.SetSiblingIndex(1);
         Overlay= overlay;
+    }
+    Vector3 GetMouseWorldPosition()
+    {
+        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPosition =  Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+        mouseWorldPosition.z = 0f;
+        return mouseWorldPosition;
     }
 }

@@ -3,25 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
-
 namespace GunPlayer
 {
     public class WeaponScript : MonoBehaviour
     {
-        [Header("Настройки стрельбы")] public float fireRate = 0.2f;
+        [Header("Настройки стрельбы")] 
+        public float fireRate = 0.15f;
         public float bulletForce = 20f;
 
-        [Header("Патроны")] public GameObject bulletPrefab;
+        [Header("Патроны")] 
+        public GameObject bulletPrefab;
         public Transform firePoint;
-        public int maxAmmo = 12;
+        public int maxAmmo = 30;
         public int currentAmmo;
         private int totalAmmo;
-        public int ammoPerReload = 12;
+        public int ammoPerReload = 30;
+
+        [Header("Настройки оружия")]
+        public float rotationOffset = 0f;
+        public float maxUpAngle = 70f;
+        public float maxDownAngle = -70f;
 
         private float nextTimeToFire = 0f;
         private bool isReloading = false;
         private Camera mainCamera;
-
+        private float currentWeaponAngle = 0f;
 
         void Start()
         {
@@ -34,21 +40,21 @@ namespace GunPlayer
 
         void Update()
         {
-            // Перезарядка по R
             if (Time.timeScale != 0f)
             {
                 Transform parentTransform = transform.parent;
                 if (parentTransform)
                 {
                     totalAmmo = parentTransform.GetComponent<PlayerScript>().Ammo;
-                    if (Keyboard.current.rKey.wasPressedThisFrame && !isReloading && currentAmmo < maxAmmo &&
-                        totalAmmo > 0)
+                    
+                    RotateWeaponTowardsMouse();
+                    
+                    if (Keyboard.current.rKey.wasPressedThisFrame && !isReloading && currentAmmo < maxAmmo && totalAmmo > 0)
                     {
                         StartCoroutine(Reload());
                         return;
                     }
 
-                    // Стрельба по ЛКМ
                     if (Mouse.current.leftButton.wasPressedThisFrame && !isReloading)
                     {
                         Shoot();
@@ -57,23 +63,55 @@ namespace GunPlayer
             }
         }
 
+        void RotateWeaponTowardsMouse()
+        {
+            // Получаем позицию мыши в мировых координатах
+            Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+            Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+            mouseWorldPosition.z = 0f;
+
+            // Получаем направление от оружия к мыши
+            Vector2 worldDirection = (mouseWorldPosition - transform.position).normalized;
+            
+            // Проверяем зеркалирование РОДИТЕЛЯ
+            bool isParentFlipped = transform.parent != null && transform.parent.localScale.x < 0;
+            
+            float angle;
+            
+            if (isParentFlipped)
+            {
+                // Если родитель зеркален, используем отражённое направление для поворота
+                Vector2 reflectedDirection = new Vector2(-worldDirection.x, worldDirection.y);
+                angle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
+            }
+            else
+            {
+                angle = Mathf.Atan2(worldDirection.y, worldDirection.x) * Mathf.Rad2Deg;
+            }
+            
+            // Добавляем смещение
+            angle += rotationOffset;
+            
+            // Ограничиваем угол
+            angle = Mathf.Clamp(angle, maxDownAngle, maxUpAngle);
+            
+            // Сохраняем угол для стрельбы
+            currentWeaponAngle = angle;
+            
+            // Применяем поворот
+            transform.localRotation = Quaternion.Euler(0, 0, angle);
+        }
+
         void Shoot()
         {
-            // Проверка времени выстрела
             if (Time.time < nextTimeToFire)
                 return;
 
-            // Проверка патронов
             if (currentAmmo <= 0)
                 return;
 
-            // Устанавливаем время следующего выстрела
             nextTimeToFire = Time.time + fireRate;
-
-            // Тратим патрон
             currentAmmo--;
-
-            // Создаем пулю
             SpawnBullet();
         }
 
@@ -88,12 +126,21 @@ namespace GunPlayer
             if (firePoint == null)
                 return;
 
-            // ИСПРАВЛЕНО: используем новый Input System
-            Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
-            Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
-            mouseWorldPosition.z = 0f;
-
-            Vector2 direction = (mouseWorldPosition - firePoint.position).normalized;
+            // Проверяем зеркалирование родителя
+            bool isParentFlipped = transform.parent != null && transform.parent.localScale.x < 0;
+    
+            Vector2 direction;
+    
+            if (isParentFlipped)
+            {
+                // При зеркалировании пуля летит налево (противоположное направление)
+                direction = -firePoint.right;
+            }
+            else
+            {
+                // Обычное состояние - пуля летит направо
+                direction = firePoint.right;
+            }
 
             // Создаем пулю
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
@@ -112,14 +159,10 @@ namespace GunPlayer
             // Уничтожаем пулю через 3 секунды
             Destroy(bullet, 3f);
         }
-
-        // ReSharper disable Unity.PerformanceAnalysis
         IEnumerator Reload()
         {
             isReloading = true;
 
-
-            // Добавляем патроны
             int ammoToAdd = Mathf.Min(ammoPerReload, totalAmmo);
             int neededAmmo = maxAmmo - currentAmmo;
             int ammoToReload = Mathf.Min(ammoToAdd, neededAmmo);
@@ -130,26 +173,22 @@ namespace GunPlayer
                 transform.parent.GetComponent<PlayerScript>().Ammo = 0;
             totalAmmo = transform.parent.GetComponent<PlayerScript>().Ammo;
 
-            // Время перезарядки
             float reloadTime = 1.5f;
             yield return new WaitForSeconds(reloadTime);
             currentAmmo += ammoToReload;
             isReloading = false;
         }
 
-        // Метод для добавления патронов
         void AddAmmo(int amount)
         {
             totalAmmo += amount;
         }
 
-        // Метод для получения информации о патронах
         string GetAmmoInfo()
         {
             return currentAmmo + " / " + totalAmmo;
         }
 
-        // Метод для проверки, можно ли стрелять
         bool CanShoot()
         {
             return !isReloading && currentAmmo > 0;

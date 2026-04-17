@@ -828,6 +828,14 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u0410\u0432\u0442\u043E\u043C\u0430\u0442\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 4473026911931709285, guid: 8b008cee2aef73d40afc6cda9593f65d, type: 3}
+      propertyPath: maxUpAngle
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473026911931709285, guid: 8b008cee2aef73d40afc6cda9593f65d, type: 3}
+      propertyPath: maxDownAngle
+      value: -70
+      objectReference: {fileID: 0}
     - target: {fileID: 6935628516530848696, guid: 8b008cee2aef73d40afc6cda9593f65d, type: 3}
       propertyPath: m_IsActive
       value: 0
