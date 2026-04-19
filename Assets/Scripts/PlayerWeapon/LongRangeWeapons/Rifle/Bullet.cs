@@ -28,7 +28,7 @@ namespace RiflePlayer
                 Destroy(gameObject);
             }
         }
-
+        
         void OnBecameInvisible()
         {
             // Уничтожаем пулю, если вышла за экран
