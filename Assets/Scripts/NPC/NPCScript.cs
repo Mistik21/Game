@@ -9,6 +9,7 @@ public class NPCScript : MonoBehaviour
     private GameObject player;
     private Transform playerTransform;
     private NavMeshAgent navMeshAgent;
+    private Animator Animation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +18,7 @@ public class NPCScript : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
+        Animation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -43,7 +45,7 @@ public class NPCScript : MonoBehaviour
             // Игрок слишком близко — стоим на месте
             navMeshAgent.SetDestination(transform.position);
         }
-
+        Animation.SetBool("stop", !IsMoving());
         DirectionOfTheModel();
     }
 
@@ -96,5 +98,11 @@ public class NPCScript : MonoBehaviour
             scale.x = Math.Abs(scale.x);
             transform.localScale = scale;
         }
+    }
+    private bool IsMoving()
+    {
+        // Проверяем, есть ли у агента заданный путь и больше ли его скорость нуля
+        return navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance 
+               && navMeshAgent.velocity.magnitude > 0.1f;
     }
 }
