@@ -55,11 +55,7 @@ public class inventory : MonoBehaviour
                     Inventory[indexInventary] = null;
                 }
             }
-
-            if (!Inventory[indexInventary])
-            {
-                PickUpWeapon();
-            }
+            PickUpWeapon();
         }
     }
 
@@ -78,11 +74,16 @@ public class inventory : MonoBehaviour
                 nearbyEnemies.Add(obj);
             }
         }
-
+        
         if (nearbyEnemies.Count > 0)
         {
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
+                if (Inventory[indexInventary])
+                {
+                    Inventory[indexInventary].transform.parent = null;
+                    Inventory[indexInventary] = null;
+                }
                 Inventory[indexInventary]=nearbyEnemies[0];
                 Inventory[indexInventary].transform.SetParent(transform);
                 var scale = Inventory[indexInventary].transform.localScale;
