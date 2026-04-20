@@ -10,6 +10,7 @@ namespace GunPlayer
         [Header("Настройки стрельбы")] 
         public float fireRate = 0.15f;
         public float bulletForce = 20f;
+        public float ReloadTime = 1f;
 
         [Header("Патроны")] 
         public GameObject bulletPrefab;
@@ -49,8 +50,9 @@ namespace GunPlayer
                     
                     RotateWeaponTowardsMouse();
                     
-                    if (Keyboard.current.rKey.wasPressedThisFrame && !isReloading && currentAmmo < maxAmmo && totalAmmo > 0)
+                    if ((Keyboard.current.rKey.wasPressedThisFrame || currentAmmo==0) && !isReloading && currentAmmo < maxAmmo && totalAmmo > 0)
                     {
+                        StartCoroutine(GameObject.Find("Inventory").GetComponent<InventoryView>().ReloadRoutine(ReloadTime));
                         StartCoroutine(Reload());
                         return;
                     }
@@ -162,7 +164,7 @@ namespace GunPlayer
         IEnumerator Reload()
         {
             isReloading = true;
-
+            yield return new WaitForSeconds(ReloadTime);
             int ammoToAdd = Mathf.Min(ammoPerReload, totalAmmo);
             int neededAmmo = maxAmmo - currentAmmo;
             int ammoToReload = Mathf.Min(ammoToAdd, neededAmmo);
@@ -172,9 +174,7 @@ namespace GunPlayer
             if (transform.parent.GetComponent<PlayerScript>().Ammo < 0)
                 transform.parent.GetComponent<PlayerScript>().Ammo = 0;
             totalAmmo = transform.parent.GetComponent<PlayerScript>().Ammo;
-
-            float reloadTime = 1.5f;
-            yield return new WaitForSeconds(reloadTime);
+            
             currentAmmo += ammoToReload;
             isReloading = false;
         }
@@ -192,6 +192,12 @@ namespace GunPlayer
         bool CanShoot()
         {
             return !isReloading && currentAmmo > 0;
+        }
+        private void OnDisable()
+        {
+            // Останавливаем все корутины при отключении объекта
+            StopAllCoroutines();
+            isReloading = false;
         }
     }
 }

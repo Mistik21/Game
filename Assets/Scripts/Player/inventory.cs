@@ -5,12 +5,11 @@ using UnityEngine.InputSystem;
 
 public class inventory : MonoBehaviour
 {
-    public string targetTag = "PlayerWeapon";   // Тег искомых объектов
+    public int indexInventary = 0;
+    public string targetTag = "PlayerWeapon"; // Тег искомых объектов
     public float detectionRange = 1.3f;
     public GameObject[] Inventory = new GameObject[2];
-    private int indexInventary = 0;
     private List<GameObject> nearbyEnemies = new List<GameObject>();
-
 
 
     void Start()
@@ -28,6 +27,10 @@ public class inventory : MonoBehaviour
         }
     }
 
+    public int IndexInventory()
+    {
+        return indexInventary;
+    }
 
     void Update()
     {
@@ -56,10 +59,7 @@ public class inventory : MonoBehaviour
                 }
             }
 
-            if (!Inventory[indexInventary])
-            {
-                PickUpWeapon();
-            }
+            PickUpWeapon();
         }
     }
 
@@ -71,6 +71,11 @@ public class inventory : MonoBehaviour
 
         foreach (GameObject obj in allObjects)
         {
+            if (Inventory[indexInventary] && obj == Inventory[indexInventary])
+            {
+                continue;
+            }
+
             float distance = Vector2.Distance(transform.position, obj.transform.position);
 
             if (distance <= detectionRange)
@@ -83,12 +88,16 @@ public class inventory : MonoBehaviour
         {
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
-                Inventory[indexInventary]=nearbyEnemies[0];
+                if (Inventory[indexInventary])
+                {
+                    Inventory[indexInventary].transform.parent = null;
+                }
+                Inventory[indexInventary] = nearbyEnemies[0];
                 Inventory[indexInventary].transform.SetParent(transform);
                 var scale = Inventory[indexInventary].transform.localScale;
                 scale.x = Math.Abs(scale.x);
                 Inventory[indexInventary].transform.localScale = scale;
-                Inventory[indexInventary].transform.localPosition  = new Vector3(0.34f, -0.2f, 0);
+                Inventory[indexInventary].transform.localPosition = new Vector3(0.34f, -0.2f, 0);
             }
         }
     }
