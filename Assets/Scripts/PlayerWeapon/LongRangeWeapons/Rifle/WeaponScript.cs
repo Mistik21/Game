@@ -65,6 +65,11 @@ namespace RiflePlayer
                         Shoot();
                     }
                 }
+                else
+                {
+                    StopAllCoroutines();
+                    isReloading = false;
+                }
             }
         }
 

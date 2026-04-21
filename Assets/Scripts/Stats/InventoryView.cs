@@ -48,6 +48,8 @@ public class InventoryView : MonoBehaviour
         }
         else if (!inventory[0])
         {
+            View1Image.GetComponent<Image>().fillAmount = 0f;
+            indexReloading = -1;
             view1Render.sprite=null;
             view1Render.transform.localScale=new Vector3(1,1,1);
         }
@@ -58,6 +60,8 @@ public class InventoryView : MonoBehaviour
         }
         else if (!inventory[1])
         {
+            View1Image.GetComponent<Image>().fillAmount = 0f;
+            indexReloading = -1;
             view2Render.sprite=null;
             view2Render.transform.localScale=new Vector3(1,1,1);
         }

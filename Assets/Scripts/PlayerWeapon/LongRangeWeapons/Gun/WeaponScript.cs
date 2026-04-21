@@ -62,6 +62,11 @@ namespace GunPlayer
                         Shoot();
                     }
                 }
+                else
+                {
+                    StopAllCoroutines();
+                    isReloading = false;
+                }
             }
         }
 
