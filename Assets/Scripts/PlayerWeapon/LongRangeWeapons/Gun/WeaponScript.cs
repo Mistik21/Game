@@ -13,8 +13,8 @@ namespace GunPlayer
             fireRate = 0.15f;
             bulletForce = 20f;
             reloadTime = 1f;
-            maxAmmo = 30;
-            ammoPerReload = 30;
+            maxAmmo = 12;
+            ammoPerReload = 12;
             rotationOffset = 0f;
             maxUpAngle = 70f;
             maxDownAngle = -70f;
@@ -23,6 +23,7 @@ namespace GunPlayer
             currentWeaponAngle = 0f;
             currentAmmo = maxAmmo;
             mainCamera = Camera.main;
+            sale = true;
 
             if (firePoint == null)
                 firePoint = transform;
@@ -33,7 +34,7 @@ namespace GunPlayer
             if (Time.timeScale != 0f)
             {
                 Transform parentTransform = transform.parent;
-                if (parentTransform)
+                if (parentTransform && !sale)
                 {
                     totalAmmo = parentTransform.GetComponent<PlayerScript>().Ammo;
 

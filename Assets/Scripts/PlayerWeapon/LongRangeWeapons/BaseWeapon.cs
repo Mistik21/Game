@@ -25,5 +25,7 @@ namespace RiflePlayer
         public bool isReloading;
         public Camera mainCamera;
         public float currentWeaponAngle;
+        public bool sale;
+        public int price=20;
     }
 }

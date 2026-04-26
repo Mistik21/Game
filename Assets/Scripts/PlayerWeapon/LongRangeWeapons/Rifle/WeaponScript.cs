@@ -21,6 +21,7 @@ namespace RiflePlayer
             currentWeaponAngle = 0f;
             currentAmmo = maxAmmo;
             mainCamera = Camera.main;
+            sale = true;
 
             if (firePoint == null) firePoint = transform;
         }
@@ -30,7 +31,7 @@ namespace RiflePlayer
             if (Time.timeScale != 0f)
             {
                 Transform parentTransform = transform.parent;
-                if (parentTransform)
+                if (parentTransform && !sale)
                 {
                     totalAmmo = parentTransform.GetComponent<PlayerScript>().Ammo;
 
