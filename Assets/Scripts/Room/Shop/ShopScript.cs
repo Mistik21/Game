@@ -25,7 +25,7 @@ public class ShopScript : MonoBehaviour
         var random = new Random();
         foreach (var spavn in spavns)
         {
-            var index = random.Next(0, PrefabsSale.Count - 1);
+            var index = random.Next(0, PrefabsSale.Count);
             var instance = PrefabUtility.InstantiatePrefab(PrefabsSale[index]) as GameObject;
             instance.transform.position = spavn.transform.position;
             instance.transform.SetParent(transform);

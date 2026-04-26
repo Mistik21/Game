@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using RiflePlayer;
 using UnityEngine;
 
 
@@ -20,7 +21,7 @@ namespace GunPlayer
         void Update()
         {
             Transform parentTransform = transform.parent;
-            if (!parentTransform)
+            if (!parentTransform || GetComponent<BaseWeapon>().sale)
             {
                 GameObject[] allObjects = GameObject.FindGameObjectsWithTag(targetTag);
 
