@@ -10,6 +10,8 @@ public class NPCScript : MonoBehaviour
     private Transform playerTransform;
     private NavMeshAgent navMeshAgent;
     private Animator Animation;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +21,8 @@ public class NPCScript : MonoBehaviour
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
         Animation = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     // Update is called once per frame
@@ -104,5 +108,16 @@ public class NPCScript : MonoBehaviour
         // Проверяем, есть ли у агента заданный путь и больше ли его скорость нуля
         return navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance 
                && navMeshAgent.velocity.magnitude > 0.1f;
+    }
+    public void FlashRed(float duration = 0.1f)
+    {
+        spriteRenderer.color = Color.red;
+        CancelInvoke("ResetColor");
+        Invoke("ResetColor", duration);
+    }
+
+    private void ResetColor()
+    {
+        spriteRenderer.color = originalColor;
     }
 }
