@@ -20,6 +20,7 @@ public class PlayerScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public bool isPaused = false;
     private GameObject Overlay;
+    private Color originalColor;
 
 
     void Start()
@@ -27,6 +28,7 @@ public class PlayerScript : MonoBehaviour
         Animation = GetComponent<Animator>();
         rigidbodyPlayer = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     void Update()
@@ -156,5 +158,17 @@ public class PlayerScript : MonoBehaviour
         Vector3 mouseWorldPosition =  Camera.main.ScreenToWorldPoint(mouseScreenPosition);
         mouseWorldPosition.z = 0f;
         return mouseWorldPosition;
+    }
+    
+    public void FlashRed(float duration = 0.1f)
+    {
+        spriteRenderer.color = Color.red;
+        CancelInvoke("ResetColor");
+        Invoke("ResetColor", duration);
+    }
+
+    private void ResetColor()
+    {
+        spriteRenderer.color = originalColor;
     }
 }

@@ -1,0 +1,1820 @@
+fileFormatVersion: 2
+guid: 6489d50563f4d4a49baf18a5f21762fc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5174279541938600062
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_0
+  - first:
+      213: -8561478558787188559
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_1
+  - first:
+      213: 4033542573681790233
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_2
+  - first:
+      213: 2145998548171270285
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_3
+  - first:
+      213: 2079916930374402304
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_4
+  - first:
+      213: 6582215521281878861
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_5
+  - first:
+      213: -6729303407795037038
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_6
+  - first:
+      213: -9108140796159883015
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_7
+  - first:
+      213: 7622730871741370536
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_8
+  - first:
+      213: -6038489496746838684
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_9
+  - first:
+      213: -2146833220225935728
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_10
+  - first:
+      213: -7880192048148928163
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_11
+  - first:
+      213: -8276287116584968518
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_12
+  - first:
+      213: 8485653515758926321
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_13
+  - first:
+      213: 1510924231129560054
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_14
+  - first:
+      213: 2730396982753014096
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_15
+  - first:
+      213: 6931267316935344317
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_16
+  - first:
+      213: -5108470728505276589
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_17
+  - first:
+      213: 2030036894846640740
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_18
+  - first:
+      213: -4071723504052249916
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_19
+  - first:
+      213: 1852196754621509305
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_20
+  - first:
+      213: 2771821492859098287
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_21
+  - first:
+      213: 637463779237930340
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_22
+  - first:
+      213: 7634760620310180204
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_23
+  - first:
+      213: 579521899486887946
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_24
+  - first:
+      213: 9136536285861098302
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_25
+  - first:
+      213: 205753675379602078
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_26
+  - first:
+      213: 2229786969290609595
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_27
+  - first:
+      213: -5373966205769652394
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_28
+  - first:
+      213: 7599335370758567059
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_29
+  - first:
+      213: -2281154309189378054
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_30
+  - first:
+      213: 1341710662872712086
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_31
+  - first:
+      213: 9049815953740947831
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_32
+  - first:
+      213: -4941792975899971245
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_33
+  - first:
+      213: -5744052451345482379
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_34
+  - first:
+      213: -6593766655504949598
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_35
+  - first:
+      213: 4940773471944001526
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_36
+  - first:
+      213: 713197773197617606
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_37
+  - first:
+      213: 8630881014979547185
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_38
+  - first:
+      213: -7523768844924108216
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_39
+  - first:
+      213: -8080901441944264876
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_40
+  - first:
+      213: -4834433079699706693
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_41
+  - first:
+      213: 258945513425180469
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_42
+  - first:
+      213: 3139834785199463393
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_43
+  - first:
+      213: 7273550266394363169
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_44
+  - first:
+      213: 7676641604105468011
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_45
+  - first:
+      213: 2817874646047947391
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_46
+  - first:
+      213: -1259210548000748241
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_47
+  - first:
+      213: 7063184095908580235
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_48
+  - first:
+      213: -6456673284853010733
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_49
+  - first:
+      213: 7729411271306274841
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_50
+  - first:
+      213: -9058510284472301022
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_51
+  - first:
+      213: 8129345344923364264
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_52
+  - first:
+      213: 926393067087123615
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_53
+  - first:
+      213: 896956030646504086
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_54
+  - first:
+      213: 3268577784698603742
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_55
+  - first:
+      213: -3505418555534302060
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_56
+  - first:
+      213: -7411370864792956252
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_57
+  - first:
+      213: 7764537699770428523
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_58
+  - first:
+      213: -2634766789950828664
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_59
+  - first:
+      213: 7307904709000102693
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_60
+  - first:
+      213: 5020532357808403147
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_61
+  - first:
+      213: -9202147793829823132
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_62
+  - first:
+      213: 4364342182600384125
+    second: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 287cd2ecb244138b0800000000000000
+      internalID: -5174279541938600062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 0
+        width: 1725
+        height: 2493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b8cd578c948f2980800000000000000
+      internalID: -8561478558787188559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_2
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 2365
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91dc7b2a9950af730800000000000000
+      internalID: 4033542573681790233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_3
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 2397
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d88a0404f4e18cd10800000000000000
+      internalID: 2145998548171270285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_4
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 2307
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0018945ad695ddc10800000000000000
+      internalID: 2079916930374402304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_5
+      rect:
+        serializedVersion: 2
+        x: 2248
+        y: 2344
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ba11d742ab85b50800000000000000
+      internalID: 6582215521281878861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_6
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 2247
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c1d883436bc92a0800000000000000
+      internalID: -6729303407795037038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_7
+      rect:
+        serializedVersion: 2
+        x: 2181
+        y: 2278
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f885a0f332699180800000000000000
+      internalID: -9108140796159883015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_8
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2161
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a05c84475169c960800000000000000
+      internalID: 7622730871741370536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_9
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 2161
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4653a76cbc9f23ca0800000000000000
+      internalID: -6038489496746838684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_10
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 1914
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 096dc648f8ae432e0800000000000000
+      internalID: -2146833220225935728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_11
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 2085
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d59a930551fe3a290800000000000000
+      internalID: -7880192048148928163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_12
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2110
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abe9fc497b8b42d80800000000000000
+      internalID: -8276287116584968518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_13
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1968
+        width: 108
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f9fad5e9e813c570800000000000000
+      internalID: 8485653515758926321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_14
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2066
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3f10f3591e7f410800000000000000
+      internalID: 1510924231129560054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_15
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1968
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 051bacce69154e520800000000000000
+      internalID: 2730396982753014096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_16
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1645
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db0c43db6eec03060800000000000000
+      internalID: 6931267316935344317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_17
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1764
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35746f130f01b19b0800000000000000
+      internalID: -5108470728505276589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_18
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1796
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 462654edcc32c2c10800000000000000
+      internalID: 2030036894846640740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_19
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 1706
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca5b55cb055e77c0800000000000000
+      internalID: -4071723504052249916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_20
+      rect:
+        serializedVersion: 2
+        x: 2248
+        y: 1744
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bea85d822354b910800000000000000
+      internalID: 1852196754621509305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_21
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 1647
+        width: 72
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4d8a646fc777620800000000000000
+      internalID: 2771821492859098287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_22
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1560
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465a7a60ee9b8d800800000000000000
+      internalID: 637463779237930340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_23
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 1560
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61babe555e14f960800000000000000
+      internalID: 7634760620310180204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_24
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 1313
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a00c97ed810ea0800800000000000000
+      internalID: 579521899486887946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_25
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1484
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e33b734385f7bce70800000000000000
+      internalID: 9136536285861098302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_26
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1510
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e927b3ca0ebfad200800000000000000
+      internalID: 205753675379602078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_27
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1367
+        width: 109
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb39c554f6bc1fe10800000000000000
+      internalID: 2229786969290609595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_28
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1464
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65765265536db65b0800000000000000
+      internalID: -5373966205769652394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_29
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 1368
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3943027b143467960800000000000000
+      internalID: 7599335370758567059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_30
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1044
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff5aeaed36b750e0800000000000000
+      internalID: -2281154309189378054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_31
+      rect:
+        serializedVersion: 2
+        x: 2262
+        y: 1163
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693c1eb3db6be9210800000000000000
+      internalID: 1341710662872712086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_32
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1195
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771646579a7679d70800000000000000
+      internalID: 9049815953740947831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_33
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 1105
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35136fd98793b6bb0800000000000000
+      internalID: -4941792975899971245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_34
+      rect:
+        serializedVersion: 2
+        x: 2248
+        y: 1142
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57d37529ab60940b0800000000000000
+      internalID: -5744052451345482379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_35
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 1045
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aedfce792c3e74a0800000000000000
+      internalID: -6593766655504949598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_36
+      rect:
+        serializedVersion: 2
+        x: 2181
+        y: 1076
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f745ee9b47219440800000000000000
+      internalID: 4940773471944001526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_37
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 959
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c92b069899c5e900800000000000000
+      internalID: 713197773197617606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_38
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 959
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130d4840e8c07c770800000000000000
+      internalID: 8630881014979547185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_39
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 712
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 842c5222914369790800000000000000
+      internalID: -7523768844924108216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_40
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 883
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f58f7f3fedadf80800000000000000
+      internalID: -8080901441944264876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_41
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 908
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbce91a5ab4a8ecb0800000000000000
+      internalID: -4834433079699706693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_42
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 766
+        width: 108
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53793ef8295f79300800000000000000
+      internalID: 258945513425180469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_43
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 864
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eb9a310a1fe29b20800000000000000
+      internalID: 3139834785199463393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_44
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 766
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 125426c2e67d0f460800000000000000
+      internalID: 7273550266394363169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_45
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 443
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68f0b8cdd8e88a60800000000000000
+      internalID: 7676641604105468011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_46
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 562
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a74439f0a1b1720800000000000000
+      internalID: 2817874646047947391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_47
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 594
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d8dfc9da2668ee0800000000000000
+      internalID: -1259210548000748241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_48
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 504
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8bc1db4388750260800000000000000
+      internalID: 7063184095908580235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_49
+      rect:
+        serializedVersion: 2
+        x: 2248
+        y: 542
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dee4993bd94566a0800000000000000
+      internalID: -6456673284853010733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_50
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 445
+        width: 72
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9186c1d5992644b60800000000000000
+      internalID: 7729411271306274841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_51
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 358
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a4ecbe3e4b94280800000000000000
+      internalID: -9058510284472301022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_52
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 358
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8abe1a4258c31d070800000000000000
+      internalID: 8129345344923364264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_53
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 111
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f94dc1616953bdc00800000000000000
+      internalID: 926393067087123615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_54
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 282
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a44d1f1c0a27c00800000000000000
+      internalID: 896956030646504086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_55
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 308
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed881b17d225c5d20800000000000000
+      internalID: 3268577784698603742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_56
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 165
+        width: 109
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 494a05075604a5fc0800000000000000
+      internalID: -3505418555534302060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_57
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 262
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a216513775852990800000000000000
+      internalID: -7411370864792956252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_58
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 166
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6ce1ff46ed21cb60800000000000000
+      internalID: 7764537699770428523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_59
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f0cfa609d6f6bd0800000000000000
+      internalID: -2634766789950828664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_60
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5230b582d94ea6560800000000000000
+      internalID: 7307904709000102693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_61
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc2368a54938ca540800000000000000
+      internalID: 5020532357808403147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_62
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46df02a26576b4080800000000000000
+      internalID: -9202147793829823132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_63
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 0
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e16208712419c30800000000000000
+      internalID: 4364342182600384125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_0: -5174279541938600062
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_1: -8561478558787188559
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_10: -2146833220225935728
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_11: -7880192048148928163
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_12: -8276287116584968518
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_13: 8485653515758926321
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_14: 1510924231129560054
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_15: 2730396982753014096
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_16: 6931267316935344317
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_17: -5108470728505276589
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_18: 2030036894846640740
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_19: -4071723504052249916
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_2: 4033542573681790233
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_20: 1852196754621509305
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_21: 2771821492859098287
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_22: 637463779237930340
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_23: 7634760620310180204
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_24: 579521899486887946
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_25: 9136536285861098302
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_26: 205753675379602078
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_27: 2229786969290609595
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_28: -5373966205769652394
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_29: 7599335370758567059
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_3: 2145998548171270285
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_30: -2281154309189378054
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_31: 1341710662872712086
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_32: 9049815953740947831
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_33: -4941792975899971245
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_34: -5744052451345482379
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_35: -6593766655504949598
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_36: 4940773471944001526
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_37: 713197773197617606
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_38: 8630881014979547185
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_39: -7523768844924108216
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_4: 2079916930374402304
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_40: -8080901441944264876
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_41: -4834433079699706693
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_42: 258945513425180469
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_43: 3139834785199463393
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_44: 7273550266394363169
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_45: 7676641604105468011
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_46: 2817874646047947391
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_47: -1259210548000748241
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_48: 7063184095908580235
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_49: -6456673284853010733
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_5: 6582215521281878861
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_50: 7729411271306274841
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_51: -9058510284472301022
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_52: 8129345344923364264
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_53: 926393067087123615
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_54: 896956030646504086
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_55: 3268577784698603742
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_56: -3505418555534302060
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_57: -7411370864792956252
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_58: 7764537699770428523
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_59: -2634766789950828664
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_6: -6729303407795037038
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_60: 7307904709000102693
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_61: 5020532357808403147
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_62: -9202147793829823132
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_63: 4364342182600384125
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_7: -9108140796159883015
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_8: 7622730871741370536
+      pngtree-pixel-art-red-health-potion-icon-healing-elixir-bottle-png-image_21524106_9: -6038489496746838684
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

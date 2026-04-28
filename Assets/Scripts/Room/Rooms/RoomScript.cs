@@ -1,13 +1,16 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
+using Randoms = System.Random;
 
 public class RoomScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public List<GameObject> NPCs;
-    public GameObject Door;
+    public List<GameObject> Doors;
     public GameObject Controler;
     public GameObject Area;
     public GameObject NPCPrefab;
@@ -21,6 +24,17 @@ public class RoomScript : MonoBehaviour
     [SerializeField] private int maxAttempts = 30; 
     void Start()
     {
+        foreach (Transform child in GetComponentsInChildren<Transform>(true))
+        {
+            // Пропускаем сам родительский объект
+            if (child == transform) continue;
+            
+            // Если у дочернего объекта есть тег "Door", добавляем его в список
+            if (child.CompareTag("Door"))
+            {
+                Doors.Add(child.gameObject);
+            }
+        }
         spawnAreaCenter=Area.transform.position;
         SpawnObjects();
     }
@@ -30,9 +44,16 @@ public class RoomScript : MonoBehaviour
     {
         if (NPCs.All(obj => !obj))
         {
-            Destroy(Door);
+            foreach(var door in Doors)
+            {
+                Destroy(door);
+            }
             Destroy(Controler);
             Destroy(Area);
+            var player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
+            var random = new Randoms();
+            player.Mana += random.Next(1,(int)Math.Min((player.MaxMana-player.Mana),200)+1);
+            player.Money += random.Next(1,6);
             enabled = false;
         }
     }

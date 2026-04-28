@@ -17,14 +17,15 @@ namespace GunNPC
 
         void OnTriggerEnter2D(Collider2D other)
         {
-            // Проверяем, не попала ли пуля в игрока
             if (other.CompareTag("Wall"))
             {
                 Destroy(gameObject);
             }
             if (other.CompareTag("Player"))
             {
-                other.GetComponent<PlayerScript>().Hp-=damage;
+                PlayerScript player = other.GetComponent<PlayerScript>();
+                player.Hp -= damage;
+                player.FlashRed(0.1f); // 0.1 секунды = 100 миллисекунд
                 Destroy(gameObject);
             }
         }

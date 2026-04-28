@@ -5,41 +5,25 @@ using UnityEngine.InputSystem;
 
 namespace RiflePlayer
 {
-    public class WeaponScript : MonoBehaviour
+    public class WeaponScript : BaseWeapon
     {
-        [Header("Настройки отображения в инвентаре")] 
-        public GameObject imageInventory;
-        
-        [Header("Настройки стрельбы")] 
-        public float fireRate = 0.15f;
-        public float bulletForce = 20f;
-        public float ReloadTime = 2f;
-
-        [Header("Патроны")] 
-        public GameObject bulletPrefab;
-        public Transform firePoint;
-        public int maxAmmo = 30;
-        public int currentAmmo;
-        private int totalAmmo;
-        public int ammoPerReload = 30;
-
-        [Header("Настройки оружия")]
-        public float rotationOffset = 0f;
-        public float maxUpAngle = 70f;
-        public float maxDownAngle = -70f;
-
-        private float nextTimeToFire = 0f;
-        private bool isReloading = false;
-        private Camera mainCamera;
-        private float currentWeaponAngle = 0f;
-
         void Start()
         {
+            bulletForce = 20f;
+            reloadTime = 2f;
+            maxAmmo = 30;
+            ammoPerReload = 30;
+            rotationOffset = 0f;
+            maxUpAngle = 70f;
+            maxDownAngle = -70f;
+            nextTimeToFire = 0f;
+            isReloading = false;
+            currentWeaponAngle = 0f;
             currentAmmo = maxAmmo;
             mainCamera = Camera.main;
+            sale = true;
 
-            if (firePoint == null)
-                firePoint = transform;
+            if (firePoint == null) firePoint = transform;
         }
 
         void Update()
@@ -47,15 +31,17 @@ namespace RiflePlayer
             if (Time.timeScale != 0f)
             {
                 Transform parentTransform = transform.parent;
-                if (parentTransform)
+                if (parentTransform && !sale)
                 {
                     totalAmmo = parentTransform.GetComponent<PlayerScript>().Ammo;
-                    
+
                     RotateWeaponTowardsMouse();
-                    
-                    if ((Keyboard.current.rKey.wasPressedThisFrame || currentAmmo==0) && !isReloading && currentAmmo < maxAmmo && totalAmmo > 0)
+
+                    if ((Keyboard.current.rKey.wasPressedThisFrame || currentAmmo == 0) && !isReloading &&
+                        currentAmmo < maxAmmo && totalAmmo > 0)
                     {
-                        StartCoroutine(GameObject.Find("Inventory").GetComponent<InventoryView>().ReloadRoutine(ReloadTime));
+                        StartCoroutine(GameObject.Find("Inventory").GetComponent<InventoryView>()
+                            .ReloadRoutine(reloadTime));
                         StartCoroutine(Reload());
                         return;
                     }
@@ -64,6 +50,11 @@ namespace RiflePlayer
                     {
                         Shoot();
                     }
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    isReloading = false;
                 }
             }
         }
@@ -77,12 +68,12 @@ namespace RiflePlayer
 
             // Получаем направление от оружия к мыши
             Vector2 worldDirection = (mouseWorldPosition - transform.position).normalized;
-            
+
             // Проверяем зеркалирование РОДИТЕЛЯ
             bool isParentFlipped = transform.parent != null && transform.parent.localScale.x < 0;
-            
+
             float angle;
-            
+
             if (isParentFlipped)
             {
                 // Если родитель зеркален, используем отражённое направление для поворота
@@ -93,16 +84,16 @@ namespace RiflePlayer
             {
                 angle = Mathf.Atan2(worldDirection.y, worldDirection.x) * Mathf.Rad2Deg;
             }
-            
+
             // Добавляем смещение
             angle += rotationOffset;
-            
+
             // Ограничиваем угол
             angle = Mathf.Clamp(angle, maxDownAngle, maxUpAngle);
-            
+
             // Сохраняем угол для стрельбы
             currentWeaponAngle = angle;
-            
+
             // Применяем поворот
             transform.localRotation = Quaternion.Euler(0, 0, angle);
         }
@@ -133,9 +124,9 @@ namespace RiflePlayer
 
             // Проверяем зеркалирование родителя
             bool isParentFlipped = transform.parent != null && transform.parent.localScale.x < 0;
-    
+
             Vector2 direction;
-    
+
             if (isParentFlipped)
             {
                 // При зеркалировании пуля летит налево (противоположное направление)
@@ -164,10 +155,11 @@ namespace RiflePlayer
             // Уничтожаем пулю через 3 секунды
             Destroy(bullet, 3f);
         }
+
         IEnumerator Reload()
         {
             isReloading = true;
-            yield return new WaitForSeconds(ReloadTime);
+            yield return new WaitForSeconds(reloadTime);
             int ammoToAdd = Mathf.Min(ammoPerReload, totalAmmo);
             int neededAmmo = maxAmmo - currentAmmo;
             int ammoToReload = Mathf.Min(ammoToAdd, neededAmmo);
@@ -177,7 +169,7 @@ namespace RiflePlayer
             if (transform.parent.GetComponent<PlayerScript>().Ammo < 0)
                 transform.parent.GetComponent<PlayerScript>().Ammo = 0;
             totalAmmo = transform.parent.GetComponent<PlayerScript>().Ammo;
-            
+
             currentAmmo += ammoToReload;
             isReloading = false;
         }
@@ -196,6 +188,7 @@ namespace RiflePlayer
         {
             return !isReloading && currentAmmo > 0;
         }
+
         private void OnDisable()
         {
             // Останавливаем все корутины при отключении объекта

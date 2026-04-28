@@ -20,7 +20,7 @@ namespace RiflePlayer
         void Update()
         {
             Transform parentTransform = transform.parent;
-            if (!parentTransform)
+            if (!parentTransform || GetComponent<BaseWeapon>().sale)
             {
                 GameObject[] allObjects = GameObject.FindGameObjectsWithTag(targetTag);
 
