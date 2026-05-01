@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -15,6 +16,7 @@ public class RoomScript : MonoBehaviour
     public GameObject Area;
     public GameObject NPCPrefab;
     private int MaxNPC=5;
+    public List<GameObject> PrefabsNPC;
     [Header("Область поиска")]
     [SerializeField] private Vector2 spawnAreaCenter ;
     [SerializeField] private float spawnRadius = 12f;      // Радиус области
@@ -36,6 +38,17 @@ public class RoomScript : MonoBehaviour
             }
         }
         spawnAreaCenter=Area.transform.position;
+        string folderPath = "Assets/Prefabs/NPCPrefabs"; 
+        string[] guids = AssetDatabase.FindAssets("t:Prefab", new[] { folderPath });
+        foreach (string guid in guids)
+        {
+            // Преобразуем GUID в путь к файлу.
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+
+            // Загружаем префаб по пути.
+            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            PrefabsNPC.Add(prefab);
+        }
         SpawnObjects();
     }
 
@@ -52,21 +65,32 @@ public class RoomScript : MonoBehaviour
             Destroy(Area);
             var player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
             var random = new Randoms();
-            player.Mana += random.Next(1,(int)Math.Min((player.MaxMana-player.Mana),200)+1);
+            player.Mana += random.Next(0,(int)Math.Min((player.MaxMana-player.Mana),200)+1);
             player.Money += random.Next(1,6);
             enabled = false;
         }
     }
     public void SpawnObjects()
     {
-        for (int i = 1; i < Random.Range(2, MaxNPC); i++)
+        foreach (var NPC in PrefabsNPC)
         {
-            Vector3 spawnPoint = GetRandomPointOnNavMesh();
-            if (spawnPoint != Vector3.zero)
+            if (NPCs.Count >= MaxNPC)
             {
-                GameObject newNPC = Instantiate(NPCPrefab, spawnPoint, Quaternion.identity);
-                NPCs.Add(newNPC);
+                break;
             }
+            for (int i = 1; i < Random.Range(1, MaxNPC); i++)
+            {
+                Vector3 spawnPoint = GetRandomPointOnNavMesh();
+                if (spawnPoint != Vector3.zero)
+                {
+                    GameObject newNPC = Instantiate(NPC, spawnPoint, Quaternion.identity);
+                    NPCs.Add(newNPC);
+                }
+            }
+        }
+        if (NPCs.Count == 0)
+        {
+            SpawnObjects();
         }
     }
     private Vector3 GetRandomPointOnNavMesh()

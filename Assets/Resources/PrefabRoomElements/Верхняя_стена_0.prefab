@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6252684507393789326}
   - component: {fileID: 5654794497918812212}
-  - component: {fileID: 6309371676003873950}
+  - component: {fileID: 5430681601675604210}
   m_Layer: 0
   m_Name: "\u0412\u0435\u0440\u0445\u043D\u044F\u044F_\u0441\u0442\u0435\u043D\u0430_0"
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!60 &6309371676003873950
+--- !u!60 &5430681601675604210
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,9 +139,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -11.317525, y: 1.8973097}
-      - {x: -11.317525, y: -1.8872081}
-      - {x: 11.304125, y: -1.8872081}
-      - {x: 11.328541, y: -1.8627918}
+      - {x: -11.317508, y: 0.4775652}
+      - {x: 11.330433, y: 0.3784622}
+      - {x: 11.33103, y: 1.444874}
       - {x: 11.328541, y: 1.8728935}
       - {x: 11.304125, y: 1.8973097}
   m_UseDelaunayMesh: 1

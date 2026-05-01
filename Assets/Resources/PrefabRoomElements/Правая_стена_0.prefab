@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 917740123824182987}
   - component: {fileID: 8815702698077091946}
-  - component: {fileID: 1998256179298875738}
+  - component: {fileID: -4760336831306208864}
   m_Layer: 0
   m_Name: "\u041F\u0440\u0430\u0432\u0430\u044F_\u0441\u0442\u0435\u043D\u0430_0"
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!60 &1998256179298875738
+--- !u!60 &-4760336831306208864
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

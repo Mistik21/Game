@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
@@ -15,14 +16,15 @@ public class TrigerDoorScript : MonoBehaviour
         {
             foreach(var door in Doors)
             {
-                door.SetActive(true);
+                StartCoroutine(EnableDoorAfterDelay(0.1f,door));
             }
             Room.GetComponent<RoomScript>().enabled=true;
             foreach (var triger in Trigers)
             {
                 Destroy(triger);
             }
-            Destroy(gameObject);
+
+            StartCoroutine(Dest(0.1f));
         }
     }
 
@@ -53,5 +55,15 @@ public class TrigerDoorScript : MonoBehaviour
                 Trigers.Add(child.gameObject);
             }
         }
+    }
+    IEnumerator EnableDoorAfterDelay(float delay, GameObject door)
+    {
+        yield return new WaitForSeconds(delay); // Ждём
+        door.SetActive(true); // Включаем дверь
+    }
+    IEnumerator Dest(float delay)
+    {
+        yield return new WaitForSeconds(delay); // Ждём
+        Destroy(gameObject); // Включаем дверь
     }
 }
