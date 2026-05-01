@@ -7,7 +7,7 @@ public class Flashlight : MonoBehaviour
     public Light2D globalLight;
     private Camera cam;
     
-    private bool isFlashlightMode = true;
+    private bool isFlashlightMode = false;
     
     void Start()
     {
