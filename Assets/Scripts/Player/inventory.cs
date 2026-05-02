@@ -89,22 +89,25 @@ public class inventory : MonoBehaviour
         {
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
-                if (nearbyEnemies[0].GetComponent<BaseWeapon>().sale)
+                if (nearbyEnemies[0].GetComponent<BaseWeapon>() && nearbyEnemies[0].GetComponent<BaseWeapon>().sale)
                 {
                     if (nearbyEnemies[0].GetComponent<BaseWeapon>().price <= GetComponent<PlayerScript>().Money)
                     {
                         GetComponent<PlayerScript>().Money -= nearbyEnemies[0].GetComponent<BaseWeapon>().price;
-                        nearbyEnemies[0].GetComponent<BaseWeapon>().sale=false;
+                        nearbyEnemies[0].GetComponent<BaseWeapon>().sale = false;
                     }
                     else
                     {
                         return;
                     }
                 }
+
+
                 if (Inventory[indexInventary])
                 {
                     Inventory[indexInventary].transform.parent = null;
                 }
+
                 Inventory[indexInventary] = nearbyEnemies[0];
                 Inventory[indexInventary].transform.SetParent(transform);
                 var scale = Inventory[indexInventary].transform.localScale;

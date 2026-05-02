@@ -41,6 +41,7 @@ namespace Sword
             foreach (Collider2D enemy in hitEnemies)
             {
                 enemy.GetComponent<NPCScript>().Hp-=damage;
+                enemy.GetComponent<NPCScript>().FlashRed(0.1f);
             }
             
         }
