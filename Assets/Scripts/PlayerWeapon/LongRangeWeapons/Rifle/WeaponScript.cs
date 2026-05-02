@@ -22,6 +22,7 @@ namespace RiflePlayer
             currentAmmo = maxAmmo;
             mainCamera = Camera.main;
             sale = true;
+            type = "P";
 
             if (firePoint == null) firePoint = transform;
         }
