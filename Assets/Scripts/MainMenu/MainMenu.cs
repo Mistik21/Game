@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
     // Метод для кнопки "Начать игру"
     public void StartGame()
     {
-        SceneManager.LoadScene("GameScene"); // Укажите имя вашей игровой сцены
+        SceneManager.LoadScene("Spawn"); // Укажите имя вашей игровой сцены
     }
     public void ExitGame()
     {
