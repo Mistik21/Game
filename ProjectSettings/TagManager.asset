@@ -10,6 +10,7 @@ TagManager:
   - NPCWeapon
   - Door
   - TrigerDoor
+  - Light
   layers:
   - Default
   - TransparentFX
