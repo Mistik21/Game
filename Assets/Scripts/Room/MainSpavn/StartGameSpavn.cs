@@ -35,7 +35,7 @@ public class StartGameSpavn : MonoBehaviour
                     child.gameObject.SetActive(true);
                 }
             }
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("Level2");
         }
     }
 }
