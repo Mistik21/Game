@@ -7,7 +7,7 @@ using UnityEngine.AI;
 using Random = UnityEngine.Random;
 using Randoms = System.Random;
 
-public class RoomScript : MonoBehaviour
+public class RoomBoosScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public List<GameObject> NPCs;
@@ -16,6 +16,7 @@ public class RoomScript : MonoBehaviour
     public GameObject Area;
     public int MaxNPC=5;
     public List<GameObject> PrefabsNPC;
+    public GameObject TPNextLevel;
     [Header("Область поиска")]
     [SerializeField] private Vector2 spawnAreaCenter ;
     [SerializeField] private float spawnRadius = 12f;      // Радиус области
@@ -66,6 +67,7 @@ public class RoomScript : MonoBehaviour
             var random = new Randoms();
             player.Mana += random.Next(0,(int)Math.Min((player.MaxMana-player.Mana),200)+1);
             player.Money += random.Next(1,6);
+            TPNextLevel.SetActive(true);
             enabled = false;
         }
     }

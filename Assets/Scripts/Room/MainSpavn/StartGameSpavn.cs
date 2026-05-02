@@ -24,7 +24,7 @@ public class StartGameSpavn : MonoBehaviour
     
     void Update()
     {
-        if (isPlayerInside && Keyboard.current.eKey.wasPressedThisFrame)
+        if (isPlayerInside && Keyboard.current.enterKey.wasPressedThisFrame)
         {
             var user = GameObject.FindWithTag("Player");
             user.GetComponent<TransferPlayer>().enabled=true;
@@ -35,7 +35,7 @@ public class StartGameSpavn : MonoBehaviour
                     child.gameObject.SetActive(true);
                 }
             }
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("Level1");
         }
     }
 }
