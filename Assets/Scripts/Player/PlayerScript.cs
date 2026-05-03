@@ -21,6 +21,8 @@ public class PlayerScript : MonoBehaviour
     public bool isPaused = false;
     private GameObject Overlay;
     private Color originalColor;
+    public bool end=false;
+    public GameObject EndObject;
 
 
     void Start()
@@ -35,14 +37,20 @@ public class PlayerScript : MonoBehaviour
     {
         if (Hp <= 0)
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
+            if (!end)
+            {
+                Time.timeScale = 0f;
+                end = true;
+                isPaused = true;
+                EndObject.SetActive(true);
+                CreateDarkOverlay();
+            }
         }
-        
+
         var input = Vector2.zero;
         if (Keyboard.current != null)
         {
-            if (!isPaused)
+            if (!isPaused && !end)
             {
                 if (GetMouseWorldPosition().x < transform.position.x)
                 {
@@ -83,7 +91,7 @@ public class PlayerScript : MonoBehaviour
             }
             else
             {
-                if (Keyboard.current.escapeKey.wasReleasedThisFrame && isPaused)
+                if (Keyboard.current.escapeKey.wasReleasedThisFrame && isPaused && !end)
                 {
                     ResumeGame();
                 }

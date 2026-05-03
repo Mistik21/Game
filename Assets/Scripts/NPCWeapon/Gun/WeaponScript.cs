@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,9 +43,16 @@ namespace GunNPC
                     return;
                 }
 
-                if (!parentTransform.GetComponent<NPCScript>().IsWallBetween(LayerMask.GetMask("Wall", "Obstacle")))
+                try
                 {
-                    Shoot();
+                    if (!parentTransform.GetComponent<NPCScript>().IsWallBetween(LayerMask.GetMask("Wall", "Obstacle")))
+                    {
+                        Shoot();
+                    }
+                }
+                catch (Exception)
+                {
+                    enabled = false;
                 }
             }
         }

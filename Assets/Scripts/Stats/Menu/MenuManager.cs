@@ -22,6 +22,7 @@ public class MenuManager : MonoBehaviour
     }
     public void ContinueGame()
     {
+        Debug.Log("Continue Game");
         GameObject.FindWithTag("Player").GetComponent<PlayerScript>().ResumeGame();
     }
 }

@@ -15,7 +15,6 @@ namespace RiflePlayer
         public float visualAngleOffset = -90f;
         
         private float totalMana;
-        private Camera mainCamera;
         
         void Start()
         {

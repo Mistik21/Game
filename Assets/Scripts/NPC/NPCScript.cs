@@ -32,25 +32,29 @@ public class NPCScript : MonoBehaviour
         if (Hp <= 0)
         {
             enabled = false;
-            Destroy(gameObject,0.1f);
+            Destroy(gameObject, 0.1f);
         }
 
-        navMeshAgent.SetDestination(player.transform.position);
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-        if (distance > MinDistanceToPlayer ||
-            IsWallBetween(LayerMask.GetMask("Wall", "Obstacle")))
+        if (player)
         {
-            // Игрок далеко — идём к нему
             navMeshAgent.SetDestination(player.transform.position);
-            navMeshAgent.stoppingDistance = MinDistanceToPlayer; // Остановится на дистанции
+            float distance = Vector2.Distance(transform.position, player.transform.position);
+            if (distance > MinDistanceToPlayer ||
+                IsWallBetween(LayerMask.GetMask("Wall", "Obstacle")))
+            {
+                // Игрок далеко — идём к нему
+                navMeshAgent.SetDestination(player.transform.position);
+                navMeshAgent.stoppingDistance = MinDistanceToPlayer; // Остановится на дистанции
+            }
+            else
+            {
+                // Игрок слишком близко — стоим на месте
+                navMeshAgent.SetDestination(transform.position);
+            }
+
+            Animation.SetBool("stop", !IsMoving());
+            DirectionOfTheModel();
         }
-        else
-        {
-            // Игрок слишком близко — стоим на месте
-            navMeshAgent.SetDestination(transform.position);
-        }
-        Animation.SetBool("stop", !IsMoving());
-        DirectionOfTheModel();
     }
 
     public bool IsWallBetween(LayerMask wallLayer)
