@@ -7,8 +7,9 @@ public class MusicManager : MonoBehaviour
     public AudioSource calmTrack;
     public AudioSource combatTrack;
     
-    private float targetCalmVolume = 0.5f;
+    private float targetCalmVolume = 1f;
     private float targetCombatVolume = 0f;
+    private float userVolume = 0.5f;
     
     void Awake()
     {
@@ -27,31 +28,33 @@ public class MusicManager : MonoBehaviour
     {
         calmTrack.Play();
         combatTrack.Play();
-        calmTrack.volume = targetCalmVolume;
-        combatTrack.volume = targetCombatVolume;
+
+        userVolume = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
+        calmTrack.volume = targetCalmVolume * userVolume;
+        combatTrack.volume = targetCombatVolume * userVolume;
     }
     
     void Update()
     {
-        calmTrack.volume = Mathf.Lerp(calmTrack.volume, targetCalmVolume, Time.deltaTime * 1.5f);
-        combatTrack.volume = Mathf.Lerp(combatTrack.volume, targetCombatVolume, Time.deltaTime * 1.5f);
+    calmTrack.volume = Mathf.Lerp(calmTrack.volume, targetCalmVolume * userVolume, Time.deltaTime * 1.5f);
+    combatTrack.volume = Mathf.Lerp(combatTrack.volume, targetCombatVolume * userVolume, Time.deltaTime * 1.5f);
     }
     
     public void EnterCombat()
     {
         targetCalmVolume = 0f;
-        targetCombatVolume = 0.5f;
+        targetCombatVolume = 1f;
     }
     
     public void ExitCombat()
     {
-        targetCalmVolume = 0.5f;
+        targetCalmVolume = 1f;
         targetCombatVolume = 0f;
     }
 
     public void ResetMusic()
     {
-        targetCalmVolume = 0.5f;
+        targetCalmVolume = 1f;
         targetCombatVolume = 0f;
 
         calmTrack.Stop();
@@ -69,13 +72,25 @@ public class MusicManager : MonoBehaviour
 
     public void TurnOffMusic()
     {   
-    calmTrack.Stop();
-    combatTrack.Stop();
+        calmTrack.Stop();
+        combatTrack.Stop();
 
-    calmTrack.time = 0f;
-    combatTrack.time = 0f;
+        calmTrack.time = 0f;
+        combatTrack.time = 0f;
 
-    calmTrack.volume = targetCalmVolume;
-    combatTrack.volume = targetCombatVolume;
+        calmTrack.volume = targetCalmVolume;
+        combatTrack.volume = targetCombatVolume;
     }
+
+    public void SetMusicVolume(float volume)
+    {
+        userVolume = volume;
+        ApplyVolume();
+    }
+
+    public void ApplyVolume()
+    {
+        calmTrack.volume = targetCalmVolume * userVolume;
+        combatTrack.volume = targetCombatVolume * userVolume;
+    } 
 }
