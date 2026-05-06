@@ -56,6 +56,8 @@ public class RoomScript : MonoBehaviour
     {
         if (NPCs.All(obj => !obj))
         {
+            MusicManager.Instance.ExitCombat();
+
             foreach(var door in Doors)
             {
                 Destroy(door);

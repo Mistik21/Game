@@ -17,6 +17,8 @@ public class MenuManager : MonoBehaviour
 
     public void ExitToMenu()
     {
+        MusicManager.Instance.TurnOffMusic();
+        
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }

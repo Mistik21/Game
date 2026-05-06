@@ -14,6 +14,8 @@ public class TrigerDoorBoosScript : MonoBehaviour
         // Проверяем, что объект находится сверху
         if (other.CompareTag("Player"))
         {
+            MusicManager.Instance.EnterCombat();
+            
             foreach(var door in Doors)
             {
                 StartCoroutine(EnableDoorAfterDelay(0.1f,door));

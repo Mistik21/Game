@@ -11,6 +11,9 @@ public class EndMenuManager : MonoBehaviour
     
     public void ExitToSpavn()
     {
+        if (MusicManager.Instance != null)
+            MusicManager.Instance.ResetMusic();
+            
         StartCoroutine(DestroyAllAndLoad());
     }
     
