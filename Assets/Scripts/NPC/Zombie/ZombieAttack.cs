@@ -49,7 +49,7 @@ namespace GunNPC
                 bool isWallBetween = false;
                 if (npcScript != null)
                 {
-                    isWallBetween = npcScript.IsWallBetween(LayerMask.GetMask("Wall", "Obstacle"));
+                    isWallBetween = npcScript.IsWallBetween();
                 }
                 
                 // Атакуем только если нет стены между NPC и игроком

@@ -11,6 +11,8 @@ public class EndMenuManager : MonoBehaviour
     
     public void ExitToSpavn()
     {
+        GameObject target = GameObject.FindWithTag("Load").GetComponentsInChildren<Transform>(true)[1].gameObject;
+        target.SetActive(true);
         StartCoroutine(DestroyAllAndLoad());
     }
     
@@ -20,19 +22,12 @@ public class EndMenuManager : MonoBehaviour
         
         // Создаём временный список, чтобы избежать проблем с изменением исходного
         List<GameObject> objectsToDestroy = new List<GameObject>();
-        foreach (GameObject obj in dels)
-        {
-            if (obj != null)
-            {
-                obj.SetActive(false);
-            }
-        }
 
         canvas.SetActive(false);
         player.SetActive(false);
         if (canvas) objectsToDestroy.Add(canvas);
         if (player) objectsToDestroy.Add(player);
-        objectsToDestroy.AddRange(dels);
+        objectsToDestroy.AddRange(dels.GetRange(0, 2));
         
         // Уничтожаем каждый объект отдельно
         foreach (GameObject obj in objectsToDestroy)
@@ -47,10 +42,19 @@ public class EndMenuManager : MonoBehaviour
             yield return null;
         }
         
-        dels.Clear();
-        
         // Загружаем новую сцену
         SceneManager.LoadScene("Spawn");
+        foreach (GameObject obj in dels)
+        {
+            if (obj != null)
+            {
+                // Отключаем объект перед удалением
+                obj.SetActive(false);
+                Destroy(obj);
+            }
+            // Даём Unity время на обработку
+            yield return null;
+        }
         Destroy(gameObject);
     }
 }

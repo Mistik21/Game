@@ -14,7 +14,7 @@ public class RoomScript : MonoBehaviour
     public List<GameObject> Doors;
     public GameObject Controler;
     public GameObject Area;
-    public int MaxNPC=5;
+    public int MaxNPC=4;
     public List<GameObject> PrefabsNPC;
     [Header("Область поиска")]
     [SerializeField] private Vector2 spawnAreaCenter ;

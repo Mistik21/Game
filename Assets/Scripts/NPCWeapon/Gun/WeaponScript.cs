@@ -45,7 +45,7 @@ namespace GunNPC
 
                 try
                 {
-                    if (!parentTransform.GetComponent<NPCScript>().IsWallBetween(LayerMask.GetMask("Wall", "Obstacle")))
+                    if (!parentTransform.GetComponent<NPCScript>().IsWallBetween())
                     {
                         Shoot();
                     }

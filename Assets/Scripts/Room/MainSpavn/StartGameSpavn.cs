@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -43,6 +44,8 @@ public class StartGameSpavn : MonoBehaviour
     {
         if (isPlayerInside && Keyboard.current.enterKey.wasPressedThisFrame)
         {
+            GameObject target = GameObject.FindWithTag("Load").GetComponentsInChildren<Transform>(true)[1].gameObject;
+            target.SetActive(true);
             var user = GameObject.FindWithTag("Player");
             user.GetComponent<TransferPlayer>().enabled=true;
             foreach (Transform child in user.transform)

@@ -67,7 +67,7 @@ namespace GunNPC
                 return;
             }
             
-            if (npcScript.IsWallBetween(LayerMask.GetMask("Wall", "Obstacle")))
+            if (npcScript.IsWallBetween())
                 return;
             
             Shoot();
