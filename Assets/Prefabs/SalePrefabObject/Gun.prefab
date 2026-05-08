@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 2932617144053413058}
   - component: {fileID: 7322473273760139638}
   - component: {fileID: 5382431541695492424}
+  - component: {fileID: 7657608881462275773}
   m_Layer: 10
   m_Name: Gun
   m_TagString: PlayerWeapon
@@ -350,6 +351,8 @@ MonoBehaviour:
   currentWeaponAngle: 0
   sale: 0
   price: 20
+  typeView: {fileID: 0}
+  type: 
 --- !u!114 &5382431541695492424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,3 +369,15 @@ MonoBehaviour:
   detectionRange: 1.3
   nearbyEnemies: []
   InformationBlock: {fileID: 3303362180508857112}
+--- !u!114 &7657608881462275773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140012161846767402}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7523542d0be00e640bbe6ce9778079f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestrouTransfer

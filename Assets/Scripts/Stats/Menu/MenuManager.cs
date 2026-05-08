@@ -22,8 +22,15 @@ public class MenuManager : MonoBehaviour
     public void ExitToMenu()
     {
         MusicManager.Instance.TurnOffMusic();
-        
         Time.timeScale = 1f;
+        Transfer[] allEnemies = Object.FindObjectsByType<Transfer>(FindObjectsSortMode.None);
+        TransferPlayer Enemies = Object.FindObjectsByType<TransferPlayer>(FindObjectsSortMode.None)[0];
+        SceneManager.MoveGameObjectToScene(Enemies.gameObject, SceneManager.GetActiveScene());
+        foreach (Transfer enemy in allEnemies)
+        {
+            enemy.transform.SetParent(null);
+            SceneManager.MoveGameObjectToScene(enemy.gameObject, SceneManager.GetActiveScene());
+        }
         SceneManager.LoadScene("MainMenu");
     }
     public void ContinueGame()
