@@ -21,6 +21,8 @@ public class MenuManager : MonoBehaviour
 
     public void ExitToMenu()
     {
+        GameObject target = GameObject.FindWithTag("Load").GetComponentsInChildren<Transform>(true)[1].gameObject;
+        target.SetActive(true);
         MusicManager.Instance.TurnOffMusic();
         Time.timeScale = 1f;
         Transfer[] allEnemies = Object.FindObjectsByType<Transfer>(FindObjectsSortMode.None);

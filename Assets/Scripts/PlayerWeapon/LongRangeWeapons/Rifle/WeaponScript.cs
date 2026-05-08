@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -62,41 +63,49 @@ namespace RiflePlayer
 
         void RotateWeaponTowardsMouse()
         {
-            // Получаем позицию мыши в мировых координатах
-            Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
-            Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
-            mouseWorldPosition.z = 0f;
+                // Получаем позицию мыши в мировых координатах
+                try
+                {
+                    Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+                    Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+                    mouseWorldPosition.z = 0f;
 
-            // Получаем направление от оружия к мыши
-            Vector2 worldDirection = (mouseWorldPosition - transform.position).normalized;
+                    // Получаем направление от оружия к мыши
+                    Vector2 worldDirection = (mouseWorldPosition - transform.position).normalized;
 
-            // Проверяем зеркалирование РОДИТЕЛЯ
-            bool isParentFlipped = transform.parent != null && transform.parent.localScale.x < 0;
+                    // Проверяем зеркалирование РОДИТЕЛЯ
+                    bool isParentFlipped = transform.parent != null && transform.parent.localScale.x < 0;
 
-            float angle;
+                    float angle;
 
-            if (isParentFlipped)
-            {
-                // Если родитель зеркален, используем отражённое направление для поворота
-                Vector2 reflectedDirection = new Vector2(-worldDirection.x, worldDirection.y);
-                angle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
-            }
-            else
-            {
-                angle = Mathf.Atan2(worldDirection.y, worldDirection.x) * Mathf.Rad2Deg;
-            }
+                    if (isParentFlipped)
+                    {
+                        // Если родитель зеркален, используем отражённое направление для поворота
+                        Vector2 reflectedDirection = new Vector2(-worldDirection.x, worldDirection.y);
+                        angle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
+                    }
+                    else
+                    {
+                        angle = Mathf.Atan2(worldDirection.y, worldDirection.x) * Mathf.Rad2Deg;
+                    }
 
-            // Добавляем смещение
-            angle += rotationOffset;
+                    // Добавляем смещение
+                    angle += rotationOffset;
 
-            // Ограничиваем угол
-            angle = Mathf.Clamp(angle, maxDownAngle, maxUpAngle);
+                    // Ограничиваем угол
+                    angle = Mathf.Clamp(angle, maxDownAngle, maxUpAngle);
 
-            // Сохраняем угол для стрельбы
-            currentWeaponAngle = angle;
+                    // Сохраняем угол для стрельбы
+                    currentWeaponAngle = angle;
 
-            // Применяем поворот
-            transform.localRotation = Quaternion.Euler(0, 0, angle);
+                    // Применяем поворот
+                    transform.localRotation = Quaternion.Euler(0, 0, angle);
+                }
+                catch (Exception e)
+                {
+                    mainCamera = Camera.main;
+                }
+            
         }
 
         void Shoot()

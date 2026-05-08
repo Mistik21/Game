@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -68,39 +69,49 @@ namespace RiflePlayer
 
         void RotateWeaponTowardsMouse()
         {
-            Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
-            Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
-            mouseWorldPosition.z = 0f;
-            Vector2 worldDirection = (mouseWorldPosition - transform.position).normalized;
-            bool isParentFlipped = transform.parent != null && transform.parent.localScale.x < 0;
-            float angle;
+            if (mainCamera)
+            {
+                try
+                {
+                    Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+                    Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+                    mouseWorldPosition.z = 0f;
+                    Vector2 worldDirection = (mouseWorldPosition - transform.position).normalized;
+                    bool isParentFlipped = transform.parent != null && transform.parent.localScale.x < 0;
+                    float angle;
 
-            if (isParentFlipped)
-            {
-                Vector2 reflectedDirection = new Vector2(-worldDirection.x, worldDirection.y);
-                angle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
-            }
-            else
-            {
-                angle = Mathf.Atan2(worldDirection.y, worldDirection.x) * Mathf.Rad2Deg;
-            }
+                    if (isParentFlipped)
+                    {
+                        Vector2 reflectedDirection = new Vector2(-worldDirection.x, worldDirection.y);
+                        angle = Mathf.Atan2(reflectedDirection.y, reflectedDirection.x) * Mathf.Rad2Deg;
+                    }
+                    else
+                    {
+                        angle = Mathf.Atan2(worldDirection.y, worldDirection.x) * Mathf.Rad2Deg;
+                    }
 
-            angle += rotationOffset;
-            
-            // Для зеркального режима ограничения должны быть другими
-            if (isParentFlipped)
-            {
-                angle = Mathf.Clamp(angle, -maxUpAngle, -maxDownAngle);
+                    angle += rotationOffset;
+
+                    // Для зеркального режима ограничения должны быть другими
+                    if (isParentFlipped)
+                    {
+                        angle = Mathf.Clamp(angle, -maxUpAngle, -maxDownAngle);
+                    }
+                    else
+                    {
+                        angle = Mathf.Clamp(angle, maxDownAngle, maxUpAngle);
+                    }
+
+                    currentWeaponAngle = angle;
+
+                    float visualAngle = angle + visualAngleOffset;
+                    transform.localRotation = Quaternion.Euler(0, 0, visualAngle);
+                }
+                catch (Exception e)
+                {
+                    mainCamera = Camera.main;
+                }
             }
-            else
-            {
-                angle = Mathf.Clamp(angle, maxDownAngle, maxUpAngle);
-            }
-            
-            currentWeaponAngle = angle;
-            
-            float visualAngle = angle + visualAngleOffset;
-            transform.localRotation = Quaternion.Euler(0, 0, visualAngle);
         }
 
         void Shoot()

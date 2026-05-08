@@ -66,7 +66,7 @@ public class RoomScript : MonoBehaviour
             Destroy(Area);
             var player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
             var random = new Randoms();
-            player.Mana += random.Next(0,(int)Math.Min((player.MaxMana-player.Mana),200)+1);
+            player.Mana += random.Next(0,(int)Math.Min((player.MaxMana-player.Mana)+1,200)+1);
             player.Money += random.Next(1,6);
             enabled = false;
         }
