@@ -93,7 +93,10 @@ public class PlayerScript : MonoBehaviour
             {
                 if (Keyboard.current.escapeKey.wasReleasedThisFrame && isPaused && !end)
                 {
-                    ResumeGame();
+                    if (MenuManager.Instance != null && MenuManager.Instance.isSettingsOpen)
+                        MenuManager.Instance.CloseSettings();
+                    else
+                        ResumeGame();
                 }
             }
         }
