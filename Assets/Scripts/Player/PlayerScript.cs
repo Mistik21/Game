@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,7 @@ public class PlayerScript : MonoBehaviour
     private Color originalColor;
     public bool end=false;
     public GameObject EndObject;
+    public List<string> Levels;
 
 
     void Start()
