@@ -1926,24 +1926,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_Size.x
-      value: 17.379883
+      value: 13.072037
       objectReference: {fileID: 0}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_Size.z
-      value: 16.298208
+      value: 11.744192
       objectReference: {fileID: 0}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_Center.x
-      value: 0.23138428
+      value: 0.49806213
       objectReference: {fileID: 0}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_Center.z
-      value: -3.658782
+      value: -4.007514
       objectReference: {fileID: 0}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: c109dedbd564b7f429394edfabcd7798, type: 2}
+      objectReference: {fileID: 23800000, guid: 0616f9129cc518140a754b1ced83fb22, type: 2}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_CollectObjects
       value: 1

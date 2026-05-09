@@ -44,7 +44,7 @@ public class StartGameSpavn : MonoBehaviour
     {
         if (isPlayerInside && Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            if(GameObject.FindWithTag("Player").GetComponent<PlayerScript>().Levels.Count<2)
+            if(GameObject.FindWithTag("Player").GetComponent<PlayerScript>().Levels.Count<1)
             {
                 GameObject target = GameObject.FindWithTag("Load").GetComponentsInChildren<Transform>(true)[1].gameObject;
                 target.SetActive(true);
@@ -57,13 +57,11 @@ public class StartGameSpavn : MonoBehaviour
                         child.gameObject.SetActive(true);
                     }
                 }
-
                 var random = new System.Random().Next(0, scenePaths.Count);
                 while (user.GetComponent<PlayerScript>().Levels.Contains(scenePaths[random]))
                 {
                     random = new System.Random().Next(0, scenePaths.Count);
                 }
-
                 user.GetComponent<PlayerScript>().Levels.Add(scenePaths[random]);
                 SceneManager.LoadScene(scenePaths[random]);
             }

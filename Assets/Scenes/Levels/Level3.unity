@@ -851,19 +851,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_Size.x
-      value: 17.555466
+      value: 12.735344
       objectReference: {fileID: 0}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_Size.z
-      value: 16.442019
+      value: 11.480132
       objectReference: {fileID: 0}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_Center.x
-      value: 0.19882965
+      value: 0.24608994
       objectReference: {fileID: 0}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_Center.z
-      value: -3.7379646
+      value: -4.1396403
       objectReference: {fileID: 0}
     - target: {fileID: 4361257614689178741, guid: 62b0a72254ac16344ab70696203728e0, type: 3}
       propertyPath: m_NavMeshData
