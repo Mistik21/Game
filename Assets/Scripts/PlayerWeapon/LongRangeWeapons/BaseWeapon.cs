@@ -27,5 +27,7 @@ namespace RiflePlayer
         public float currentWeaponAngle;
         public bool sale;
         public int price=20;
+        public GameObject typeView;
+        public string type;
     }
 }

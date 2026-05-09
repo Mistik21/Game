@@ -4,9 +4,13 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public static MenuManager Instance;
+    public bool isSettingsOpen = false;
+    public GameObject SettingsPanel;
+
     void Start()
     {
-        
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -17,11 +21,35 @@ public class MenuManager : MonoBehaviour
 
     public void ExitToMenu()
     {
+        GameObject target = GameObject.FindWithTag("Load").GetComponentsInChildren<Transform>(true)[1].gameObject;
+        target.SetActive(true);
+        MusicManager.Instance.TurnOffMusic();
         Time.timeScale = 1f;
+        Transfer[] allEnemies = Object.FindObjectsByType<Transfer>(FindObjectsSortMode.None);
+        TransferPlayer Enemies = Object.FindObjectsByType<TransferPlayer>(FindObjectsSortMode.None)[0];
+        SceneManager.MoveGameObjectToScene(Enemies.gameObject, SceneManager.GetActiveScene());
+        foreach (Transfer enemy in allEnemies)
+        {
+            enemy.transform.SetParent(null);
+            SceneManager.MoveGameObjectToScene(enemy.gameObject, SceneManager.GetActiveScene());
+        }
         SceneManager.LoadScene("MainMenu");
     }
     public void ContinueGame()
     {
+        Debug.Log("Continue Game");
         GameObject.FindWithTag("Player").GetComponent<PlayerScript>().ResumeGame();
+    }
+
+    public void OpenSettings()
+    {
+        SettingsPanel.SetActive(true);
+        isSettingsOpen = true;
+    }
+
+    public void CloseSettings()
+    {
+        SettingsPanel.SetActive(false);
+        isSettingsOpen = false;
     }
 }

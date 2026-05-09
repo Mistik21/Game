@@ -14,6 +14,8 @@ public class TrigerDoorScript : MonoBehaviour
         // Проверяем, что объект находится сверху
         if (other.CompareTag("Player"))
         {
+            MusicManager.Instance.EnterCombat();
+
             foreach(var door in Doors)
             {
                 StartCoroutine(EnableDoorAfterDelay(0.1f,door));
@@ -56,11 +58,16 @@ public class TrigerDoorScript : MonoBehaviour
             }
         }
     }
+
     IEnumerator EnableDoorAfterDelay(float delay, GameObject door)
     {
         yield return new WaitForSeconds(delay); // Ждём
-        door.SetActive(true); // Включаем дверь
+        if (door)
+        {
+            door.SetActive(true); // Включаем дверь
+        }
     }
+
     IEnumerator Dest(float delay)
     {
         yield return new WaitForSeconds(delay); // Ждём

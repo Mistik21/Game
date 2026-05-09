@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,71 +7,85 @@ public class NPCScript : MonoBehaviour
 {
     public float Hp = 100f;
     public float MinDistanceToPlayer = 3f;
+    public LayerMask wallLayer; // Вынеси в инспектор
+
     private GameObject player;
-    private Transform playerTransform;
     private NavMeshAgent navMeshAgent;
     private Animator Animation;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private float pathUpdateDeadline; // Для оптимизации поиска пути
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
+        
+        // Для 2D
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
+        
+        navMeshAgent.stoppingDistance = MinDistanceToPlayer; // Устанавливаем один раз
+
         Animation = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
+        
+        wallLayer = LayerMask.GetMask("Wall", "Obstacle");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.rotation = new Quaternion();
+        // Вместо создания нового Quaternion, лучше заблокировать вращение в Rigidbody или NavMesh
+        transform.rotation = Quaternion.identity;
+
         if (Hp <= 0)
         {
-            enabled = false;
-            Destroy(gameObject,0.1f);
+            Destroy(gameObject, 0.1f);
+            return;
         }
 
-        navMeshAgent.SetDestination(player.transform.position);
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-        if (distance > MinDistanceToPlayer ||
-            IsWallBetween(LayerMask.GetMask("Wall", "Obstacle")))
+        if (player != null)
         {
-            // Игрок далеко — идём к нему
-            navMeshAgent.SetDestination(player.transform.position);
-            navMeshAgent.stoppingDistance = MinDistanceToPlayer; // Остановится на дистанции
+            // Оптимизация: обновляем путь 5 раз в секунду, а не каждый кадр
+            if (Time.time > pathUpdateDeadline)
+            {
+                pathUpdateDeadline = Time.time + 0.2f;
+                
+                bool wallBetween = IsWallBetween();
+                float distance = Vector2.Distance(transform.position, player.transform.position);
+
+                // Если есть стена — идем к игроку игнорируя дистанцию остановки (чтобы зайти в комнату)
+                if (wallBetween)
+                {
+                    navMeshAgent.stoppingDistance = 0; 
+                    navMeshAgent.SetDestination(player.transform.position);
+                }
+                else
+                {
+                    navMeshAgent.stoppingDistance = MinDistanceToPlayer;
+                    navMeshAgent.SetDestination(player.transform.position);
+                }
+            }
+
+            Animation.SetBool("stop", !IsMoving());
+            DirectionOfTheModel();
         }
-        else
-        {
-            // Игрок слишком близко — стоим на месте
-            navMeshAgent.SetDestination(transform.position);
-        }
-        Animation.SetBool("stop", !IsMoving());
-        DirectionOfTheModel();
     }
 
-    public bool IsWallBetween(LayerMask wallLayer)
+    public bool IsWallBetween()
     {
-        Vector2 start = player.transform.position;
-        Vector2 end = transform.position;
+        Vector2 start = transform.position; // Лучше начинать от NPC к Игроку
+        Vector2 end = player.transform.position;
+        float distance = Vector2.Distance(start, end);
 
-        // Делаем Linecast от игрока к NPC
-        RaycastHit2D[] hits = Physics2D.LinecastAll(start, end);
+        // Используем Raycast для проверки стены
+        RaycastHit2D hit = Physics2D.Raycast(start, end - start, distance, wallLayer);
 
-
-        foreach (RaycastHit2D hit in hits)
+        if (hit.collider != null)
         {
-            // Пропускаем самого игрока и NPC
-            if (hit.transform == player.transform || hit.transform == transform)
-                continue;
-
-            // Если это стена - возвращаем true
-            if (hit.collider.CompareTag("Wall"))
-                return true;
+            return true; // На пути есть слой Wall или Obstacle
         }
 
         return false;
@@ -78,46 +93,48 @@ public class NPCScript : MonoBehaviour
 
     void DirectionOfTheModel()
     {
-        if (player.transform.position.x < transform.position.x && transform.localScale.x > 0)
+        // Проверяем направление движения (velocity), а не положение игрока, 
+        // чтобы NPC не "луноходил" спиной вперед
+        float moveDir = navMeshAgent.velocity.x;
+        
+        if (moveDir < -0.1f && transform.localScale.x > 0)
         {
             Flip(true);
         }
-        else if (player.transform.position.x > transform.position.x && transform.localScale.x < 0)
+        else if (moveDir > 0.1f && transform.localScale.x < 0)
         {
             Flip(false);
         }
     }
 
-    void Flip(bool flip)
+    void Flip(bool shouldFlip)
     {
-        if (flip)
-        {
-            var scale = transform.localScale;
-            scale.x = -scale.x;
-            transform.localScale = scale;
-        }
-        else
-        {
-            var scale = transform.localScale;
-            scale.x = Math.Abs(scale.x);
-            transform.localScale = scale;
-        }
+        Vector3 scale = transform.localScale;
+        scale.x = shouldFlip ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+        transform.localScale = scale;
     }
+
     private bool IsMoving()
     {
-        // Проверяем, есть ли у агента заданный путь и больше ли его скорость нуля
-        return navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance 
-               && navMeshAgent.velocity.magnitude > 0.1f;
+        return navMeshAgent.velocity.magnitude > 0.1f && navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance;
     }
+
     public void FlashRed(float duration = 0.1f)
     {
         spriteRenderer.color = Color.red;
-        CancelInvoke("ResetColor");
-        Invoke("ResetColor", duration);
+        CancelInvoke(nameof(ResetColor));
+        Invoke(nameof(ResetColor), duration);
     }
 
     private void ResetColor()
     {
         spriteRenderer.color = originalColor;
+    }
+
+    void OnDrawGizmos() {
+        if (navMeshAgent != null && navMeshAgent.hasPath) {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, navMeshAgent.destination);
+        }
     }
 }

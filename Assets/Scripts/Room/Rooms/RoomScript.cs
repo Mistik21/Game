@@ -14,8 +14,7 @@ public class RoomScript : MonoBehaviour
     public List<GameObject> Doors;
     public GameObject Controler;
     public GameObject Area;
-    public GameObject NPCPrefab;
-    private int MaxNPC=5;
+    public int MaxNPC=4;
     public List<GameObject> PrefabsNPC;
     [Header("Область поиска")]
     [SerializeField] private Vector2 spawnAreaCenter ;
@@ -57,6 +56,8 @@ public class RoomScript : MonoBehaviour
     {
         if (NPCs.All(obj => !obj))
         {
+            MusicManager.Instance.ExitCombat();
+
             foreach(var door in Doors)
             {
                 Destroy(door);
@@ -65,7 +66,7 @@ public class RoomScript : MonoBehaviour
             Destroy(Area);
             var player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
             var random = new Randoms();
-            player.Mana += random.Next(0,(int)Math.Min((player.MaxMana-player.Mana),200)+1);
+            player.Mana += random.Next(0,(int)Math.Min((player.MaxMana-player.Mana)+1,200)+1);
             player.Money += random.Next(1,6);
             enabled = false;
         }

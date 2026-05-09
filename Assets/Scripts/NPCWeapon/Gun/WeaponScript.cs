@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,9 +14,9 @@ namespace GunNPC
 
         [Header("Патроны")] public GameObject bulletPrefab;
         public Transform firePoint;
-        public int maxAmmo = 30;
+        private int maxAmmo = 10;
         public int currentAmmo;
-        public int ammoPerReload = 30;
+        private int ammoPerReload = 10;
 
         private float nextTimeToFire = 0f;
         private bool isReloading = false;
@@ -42,9 +43,16 @@ namespace GunNPC
                     return;
                 }
 
-                if (!parentTransform.GetComponent<NPCScript>().IsWallBetween(LayerMask.GetMask("Wall", "Obstacle")))
+                try
                 {
-                    Shoot();
+                    if (!parentTransform.GetComponent<NPCScript>().IsWallBetween())
+                    {
+                        Shoot();
+                    }
+                }
+                catch (Exception)
+                {
+                    enabled = false;
                 }
             }
         }
