@@ -6,9 +6,9 @@ namespace GunNPC
     public class ZombieAttack : MonoBehaviour
     {
         [Header("Настройки атаки")]
-        [SerializeField] private float attackRange = 1.8f;      // Дистанция атаки
-        [SerializeField] private float attackDamage = 20f;      // Урон за удар
-        [SerializeField] private float attackCooldown = 1f;     // Задержка между ударами
+        [SerializeField] private float attackRange = 1.8f;
+        [SerializeField] private float attackDamage = 20f;
+        [SerializeField] private float attackCooldown = 1f;
         
         [Header("Ссылки")]
         [SerializeField] private string playerTag = "Player";
@@ -16,6 +16,7 @@ namespace GunNPC
         private NPCScript npcScript;
         private GameObject player;
         private Transform playerTransform;
+        private Animator anim; // Добавляем ссылку на аниматор
         
         private float lastAttackTime;
         private bool isAttacking;
@@ -25,6 +26,7 @@ namespace GunNPC
         {
             npcScript = GetComponent<NPCScript>();
             navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+            anim = GetComponent<Animator>(); // Инициализируем аниматор
             
             player = GameObject.FindGameObjectWithTag(playerTag);
             if (player != null)
@@ -42,17 +44,14 @@ namespace GunNPC
             
             float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
             
-            // Проверяем, находится ли игрок в зоне атаки
             if (distanceToPlayer <= attackRange)
             {
-                // Добавляем проверку на стены, используя существующий метод из NPCScript
                 bool isWallBetween = false;
                 if (npcScript != null)
                 {
                     isWallBetween = npcScript.IsWallBetween();
                 }
                 
-                // Атакуем только если нет стены между NPC и игроком
                 if (!isWallBetween)
                 {
                     TryAttack();
@@ -62,7 +61,6 @@ namespace GunNPC
         
         private void TryAttack()
         {
-            // Проверяем, прошло ли достаточно времени для новой атаки
             if (Time.time >= lastAttackTime + attackCooldown && !isAttacking)
             {
                 Attack();
@@ -72,6 +70,14 @@ namespace GunNPC
         private void Attack()
         {
             lastAttackTime = Time.time;
+
+            // Запускаем анимацию прямо здесь перед началом корутины
+            if (anim != null)
+            {
+                // Убедись, что название клипа в Animator именно "Attack"
+                anim.Play("Attack", 0, 0f);
+            }
+
             StartCoroutine(PerformAttack());
         }
         
@@ -79,28 +85,23 @@ namespace GunNPC
         {
             isAttacking = true;
             
-            // Приостанавливаем движение во время атаки
             if (navMeshAgent != null)
             {
                 navMeshAgent.isStopped = true;
             }
             
-            // Небольшая задержка перед нанесением урона (эффект замаха)
-            yield return new WaitForSeconds(0.2f);
+            // Время "замаха" должно совпадать с моментом удара на твоей анимации
+            yield return new WaitForSeconds(0.4f);
             
-            // Наносим урон игроку
             DealDamageToPlayer();
             
-            // Эффект вспышки для зомби (опционально)
             if (npcScript != null)
             {
                 npcScript.FlashRed(0.1f);
             }
             
-            // Небольшая задержка после удара
             yield return new WaitForSeconds(0.1f);
             
-            // Возобновляем движение
             if (navMeshAgent != null)
             {
                 navMeshAgent.isStopped = false;
@@ -117,7 +118,6 @@ namespace GunNPC
                 if (player == null) return;
             }
             
-            // Получаем компонент PlayerScript и наносим урон
             PlayerScript playerScript = player.GetComponent<PlayerScript>();
             if (playerScript != null)
             {
@@ -130,8 +130,7 @@ namespace GunNPC
                 Debug.LogWarning($"PlayerScript component not found on {player.name}!");
             }
         }
-        
-        // Метод для проверки, может ли NPC атаковать в данный момент
+
         public bool CanAttack()
         {
             if (playerTransform == null) return false;
@@ -140,7 +139,6 @@ namespace GunNPC
             return distanceToPlayer <= attackRange && !isAttacking && (Time.time >= lastAttackTime + attackCooldown);
         }
         
-        // Визуализация зоны атаки в редакторе
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;

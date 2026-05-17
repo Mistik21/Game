@@ -12,6 +12,7 @@ TagManager:
   - TrigerDoor
   - Light
   - Load
+  - EndWin
   layers:
   - Default
   - TransparentFX

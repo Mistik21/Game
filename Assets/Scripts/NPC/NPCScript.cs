@@ -90,18 +90,18 @@ public class NPCScript : MonoBehaviour
 
         return false;
     }
-
     void DirectionOfTheModel()
     {
-        // Проверяем направление движения (velocity), а не положение игрока, 
-        // чтобы NPC не "луноходил" спиной вперед
-        float moveDir = navMeshAgent.velocity.x;
-        
-        if (moveDir < -0.1f && transform.localScale.x > 0)
+        // Рассчитываем разницу позиций между игроком и NPC
+        float directionToPlayer = player.transform.position.x - transform.position.x;
+    
+        // Если игрок слева (отрицательное значение), передаем true для флипа
+        if (directionToPlayer < -0.1f)
         {
             Flip(true);
         }
-        else if (moveDir > 0.1f && transform.localScale.x < 0)
+        // Если игрок справа (положительное значение), передаем false
+        else if (directionToPlayer > 0.1f)
         {
             Flip(false);
         }
@@ -110,6 +110,7 @@ public class NPCScript : MonoBehaviour
     void Flip(bool shouldFlip)
     {
         Vector3 scale = transform.localScale;
+        // Устанавливаем масштаб по X: отрицательный если shouldFlip, иначе положительный
         scale.x = shouldFlip ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
         transform.localScale = scale;
     }
