@@ -3557,6 +3557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
   calmTrack: {fileID: 1188662178}
   combatTrack: {fileID: 1519978164}
+  isPlaying: 0
 --- !u!4 &939723862
 Transform:
   m_ObjectHideFlags: 0
@@ -4849,7 +4850,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c6a3135665fd5e34b85254153e4bf44e, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.199
   m_Pitch: 1
   Loop: 1
@@ -6323,7 +6324,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2757fac4bab259e43964fbb9dd46a43f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.255
   m_Pitch: 1
   Loop: 1

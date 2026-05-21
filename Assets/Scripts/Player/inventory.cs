@@ -103,6 +103,7 @@ public class inventory : MonoBehaviour
                     }
                 }
 
+                SoundEffectsManager.Instance?.PlayWeaponPickup();
 
                 if (Inventory[indexInventary])
                 {

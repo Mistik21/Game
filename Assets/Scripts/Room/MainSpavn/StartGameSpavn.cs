@@ -46,6 +46,7 @@ public class StartGameSpavn : MonoBehaviour
         {
             if(GameObject.FindWithTag("Player").GetComponent<PlayerScript>().Levels.Count<1)
             {
+                SoundEffectsManager.Instance?.PlayTeleport();
                 MusicManager.Instance?.StartMusic();
                 GameObject target = GameObject.FindWithTag("Load").GetComponentsInChildren<Transform>(true)[1].gameObject;
                 target.SetActive(true);
