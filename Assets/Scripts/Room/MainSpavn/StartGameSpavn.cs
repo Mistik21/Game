@@ -46,6 +46,7 @@ public class StartGameSpavn : MonoBehaviour
         {
             if(GameObject.FindWithTag("Player").GetComponent<PlayerScript>().Levels.Count<1)
             {
+                MusicManager.Instance?.StartMusic();
                 GameObject target = GameObject.FindWithTag("Load").GetComponentsInChildren<Transform>(true)[1].gameObject;
                 target.SetActive(true);
                 var user = GameObject.FindWithTag("Player");
@@ -80,6 +81,7 @@ public class StartGameSpavn : MonoBehaviour
                 
                 if (taggedObjects.Count > 0)
                 {
+                    MusicManager.Instance?.TurnOffMusic();
                     taggedObjects[0].SetActive(true);
                 }
             }
