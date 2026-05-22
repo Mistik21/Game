@@ -57,6 +57,7 @@ public class RoomScript : MonoBehaviour
         if (NPCs.All(obj => !obj))
         {
             MusicManager.Instance.ExitCombat();
+            SoundEffectsManager.Instance.PlayRoomClear();
             
             foreach(var door in Doors)
             {

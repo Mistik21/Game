@@ -100,7 +100,6 @@ public class SoundEffectsManager : MonoBehaviour
         
         lastPlayedClip = clip;
         lastPlayedTime = Time.time;
-        Debug.Log($"Попытка проиграть: {clip.name}, volume={volume}, userVolume={userVolume}, итого={volume * userVolume}");
         sfxSource.PlayOneShot(clip, volume * userVolume);
     }
     
