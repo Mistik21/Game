@@ -4059,7 +4059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1093827743382188184, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2065937106214637170, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4071,19 +4071,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2065937106214637170, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7064034
+      value: 0.9998972
       objectReference: {fileID: 0}
     - target: {fileID: 2065937106214637170, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7078095
+      value: 0.014340868
       objectReference: {fileID: 0}
     - target: {fileID: 2065937106214637170, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -90.114
+      value: 1.643
       objectReference: {fileID: 0}
     - target: {fileID: 2858216688597320204, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3878419092917451275, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: globalLight
@@ -6167,7 +6167,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.02
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 0000000043199913
