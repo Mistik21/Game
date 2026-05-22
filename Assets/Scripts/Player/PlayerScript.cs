@@ -41,6 +41,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (!end)
             {
+                var sc = SceneManager.GetActiveScene();
                 Time.timeScale = 0f;
                 end = true;
                 isPaused = true;

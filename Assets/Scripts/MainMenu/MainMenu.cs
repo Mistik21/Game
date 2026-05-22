@@ -10,6 +10,12 @@ public class MainMenu : MonoBehaviour
         target.SetActive(true);
         SceneManager.LoadScene("Spawn"); // Укажите имя вашей игровой сцены
     }
+    public void TrainingGame()
+    {
+        GameObject target = GameObject.FindWithTag("Load").GetComponentsInChildren<Transform>(true)[1].gameObject;
+        target.SetActive(true);
+        SceneManager.LoadScene("Training"); // Укажите имя вашей игровой сцены
+    }
     public void ExitGame()
     {
         

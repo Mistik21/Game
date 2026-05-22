@@ -121,7 +121,7 @@ namespace GunNPC
             PlayerScript playerScript = player.GetComponent<PlayerScript>();
             if (playerScript != null)
             {
-                SoundEffectsManager.Instance.PlayHurt();
+
                 
                 playerScript.Hp -= attackDamage;
                 playerScript.FlashRed(0.1f);

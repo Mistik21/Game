@@ -37,7 +37,6 @@ public class BookManaScript : MonoBehaviour
             InformationBlock.SetActive(true);
             if (Keyboard.current.eKey.wasPressedThisFrame && nearbyEnemies[0].GetComponent<PlayerScript>().Money >= price)
             {
-                SoundEffectsManager.Instance?.PlayItemPurchase();
                 nearbyEnemies[0].GetComponent<PlayerScript>().Money -= price;
                 nearbyEnemies[0].GetComponent<PlayerScript>().MaxMana += nearbyEnemies[0].GetComponent<PlayerScript>().MaxMana*0.1f;
                 Destroy(gameObject);

@@ -31,7 +31,6 @@ namespace RiflePlayer
             currentWeaponAngle = 0f;
             currentAmmo = maxAmmo;
             mainCamera = Camera.main;
-            sale = true;
             type = "M";
 
             if (firePoint == null) firePoint = transform;
@@ -39,6 +38,12 @@ namespace RiflePlayer
 
         void Update()
         {
+            if (mainCamera == null)
+            {
+                // Попытка спасти ситуацию: если старая камера уничтожена, 
+                // пробуем найти текущую активную камеру на сцене
+                mainCamera = Camera.main;
+            }
             if (Time.timeScale != 0f)
             {
                 Transform parentTransform = transform.parent;
@@ -142,6 +147,13 @@ namespace RiflePlayer
             
             // Получаем направление к курсору МЫШИ (а не от поворота оружия)
             Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+            if (mainCamera == null)
+            {
+                // Попытка спасти ситуацию: если старая камера уничтожена, 
+                // пробуем найти текущую активную камеру на сцене
+                mainCamera = Camera.main;
+            }
+
             Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
             mouseWorldPosition.z = 0f;
             Vector2 directionToMouse = (mouseWorldPosition - firePoint.position).normalized;

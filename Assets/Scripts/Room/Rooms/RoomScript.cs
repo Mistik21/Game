@@ -57,7 +57,6 @@ public class RoomScript : MonoBehaviour
         if (NPCs.All(obj => !obj))
         {
             MusicManager.Instance.ExitCombat();
-            SoundEffectsManager.Instance.PlayRoomClear();
             
             foreach(var door in Doors)
             {
@@ -69,7 +68,6 @@ public class RoomScript : MonoBehaviour
             var random = new Randoms();
             player.Mana += random.Next(0,(int)Math.Min((player.MaxMana-player.Mana)+1,200)+1);
             player.Money += random.Next(1,6);
-            SoundEffectsManager.Instance?.PlayCoin();
             enabled = false;
         }
     }

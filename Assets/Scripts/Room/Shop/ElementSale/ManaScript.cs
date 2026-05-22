@@ -36,7 +36,6 @@ public class ManaScript : MonoBehaviour
             InformationBlock.SetActive(true);
             if (Keyboard.current.eKey.wasPressedThisFrame && nearbyEnemies[0].GetComponent<PlayerScript>().Money>=price)
             {
-                SoundEffectsManager.Instance?.PlayItemPurchase();
                 nearbyEnemies[0].GetComponent<PlayerScript>().Money -= price;
                 nearbyEnemies[0].GetComponent<PlayerScript>().Mana+=30;
                 if (nearbyEnemies[0].GetComponent<PlayerScript>().Mana > nearbyEnemies[0].GetComponent<PlayerScript>().MaxMana)

@@ -51,7 +51,6 @@ public class RoomBoosScript : MonoBehaviour
         if (NPCs.All(obj => !obj))
         {
             MusicManager.Instance.ExitCombat();
-            SoundEffectsManager.Instance.PlayRoomClear();
 
             foreach (var door in Doors)
             {
@@ -64,7 +63,6 @@ public class RoomBoosScript : MonoBehaviour
             var random = new Randoms();
             player.Mana += random.Next(0, (int)Math.Min((player.MaxMana - player.Mana), 200) + 1);
             player.Money += random.Next(15, 30);
-            SoundEffectsManager.Instance?.PlayCoin();
             TPNextLevel.SetActive(true);
             enabled = false;
         }
@@ -73,9 +71,11 @@ public class RoomBoosScript : MonoBehaviour
     public void SpawnObjects()
     {
         Vector3 spawnPoint = GetRandomPointOnNavMesh();
+        Debug.Log(spawnPoint);
         if (spawnPoint != Vector3.zero)
         {
             GameObject newNPC = Instantiate(PrefabNPC, spawnPoint, Quaternion.identity);
+            Debug.Log(newNPC);
             NPCs.Add(newNPC);
         }
     }
