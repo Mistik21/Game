@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
 public class MenuManager : MonoBehaviour
 {
@@ -25,13 +27,20 @@ public class MenuManager : MonoBehaviour
         target.SetActive(true);
         MusicManager.Instance.TurnOffMusic();
         Time.timeScale = 1f;
-        Transfer[] allEnemies = Object.FindObjectsByType<Transfer>(FindObjectsSortMode.None);
-        TransferPlayer Enemies = Object.FindObjectsByType<TransferPlayer>(FindObjectsSortMode.None)[0];
-        SceneManager.MoveGameObjectToScene(Enemies.gameObject, SceneManager.GetActiveScene());
-        foreach (Transfer enemy in allEnemies)
+        try
         {
-            enemy.transform.SetParent(null);
-            SceneManager.MoveGameObjectToScene(enemy.gameObject, SceneManager.GetActiveScene());
+            Transfer[] allEnemies = Object.FindObjectsByType<Transfer>(FindObjectsSortMode.None);
+            TransferPlayer Enemies = Object.FindObjectsByType<TransferPlayer>(FindObjectsSortMode.None)[0];
+            SceneManager.MoveGameObjectToScene(Enemies.gameObject, SceneManager.GetActiveScene());
+            foreach (Transfer enemy in allEnemies)
+            {
+                enemy.transform.SetParent(null);
+                SceneManager.MoveGameObjectToScene(enemy.gameObject, SceneManager.GetActiveScene());
+            }
+        }
+        catch (Exception e)
+        {
+            var a = 0;
         }
         SceneManager.LoadScene("MainMenu");
     }

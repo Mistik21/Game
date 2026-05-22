@@ -121,6 +121,8 @@ namespace GunNPC
             PlayerScript playerScript = player.GetComponent<PlayerScript>();
             if (playerScript != null)
             {
+
+                
                 playerScript.Hp -= attackDamage;
                 playerScript.FlashRed(0.1f);
                 Debug.Log($"Zombie attacked! Player HP: {playerScript.Hp}");

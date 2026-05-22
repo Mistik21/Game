@@ -22,7 +22,6 @@ namespace RiflePlayer
             currentWeaponAngle = 0f;
             currentAmmo = maxAmmo;
             mainCamera = Camera.main;
-            sale = true;
             type = "P";
 
             if (firePoint == null) firePoint = transform;

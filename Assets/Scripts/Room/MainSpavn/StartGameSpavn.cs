@@ -44,8 +44,28 @@ public class StartGameSpavn : MonoBehaviour
     {
         if (isPlayerInside && Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            if(GameObject.FindWithTag("Player").GetComponent<PlayerScript>().Levels.Count<1)
+            if (SceneManager.GetActiveScene().name == "Training")
             {
+                GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+                List<GameObject> taggedObjects = new List<GameObject>();
+        
+                foreach (GameObject obj in allObjects)
+                {
+                    if (obj.CompareTag("EndWin") && !EditorUtility.IsPersistent(obj))
+                    {
+                        taggedObjects.Add(obj);
+                    }
+                }
+                
+                if (taggedObjects.Count > 0)
+                {
+                    MusicManager.Instance?.TurnOffMusic();
+                    taggedObjects[0].SetActive(true);
+                }
+            }
+            else if(GameObject.FindWithTag("Player").GetComponent<PlayerScript>().Levels.Count<1)
+            {
+                MusicManager.Instance?.StartMusic();
                 GameObject target = GameObject.FindWithTag("Load").GetComponentsInChildren<Transform>(true)[1].gameObject;
                 target.SetActive(true);
                 var user = GameObject.FindWithTag("Player");
@@ -80,6 +100,7 @@ public class StartGameSpavn : MonoBehaviour
                 
                 if (taggedObjects.Count > 0)
                 {
+                    MusicManager.Instance?.TurnOffMusic();
                     taggedObjects[0].SetActive(true);
                 }
             }

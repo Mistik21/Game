@@ -102,7 +102,7 @@ public class inventory : MonoBehaviour
                         return;
                     }
                 }
-
+                
 
                 if (Inventory[indexInventary])
                 {

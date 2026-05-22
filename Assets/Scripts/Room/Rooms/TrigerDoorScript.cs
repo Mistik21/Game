@@ -16,6 +16,7 @@ public class TrigerDoorScript : MonoBehaviour
         {
             MusicManager.Instance.EnterCombat();
 
+
             foreach(var door in Doors)
             {
                 StartCoroutine(EnableDoorAfterDelay(0.1f,door));

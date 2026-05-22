@@ -349,7 +349,7 @@ MonoBehaviour:
   isReloading: 0
   mainCamera: {fileID: 0}
   currentWeaponAngle: 0
-  sale: 0
+  sale: 1
   price: 20
   typeView: {fileID: 0}
   type: 

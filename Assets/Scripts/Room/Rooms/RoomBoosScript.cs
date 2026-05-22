@@ -71,9 +71,11 @@ public class RoomBoosScript : MonoBehaviour
     public void SpawnObjects()
     {
         Vector3 spawnPoint = GetRandomPointOnNavMesh();
+        Debug.Log(spawnPoint);
         if (spawnPoint != Vector3.zero)
         {
             GameObject newNPC = Instantiate(PrefabNPC, spawnPoint, Quaternion.identity);
+            Debug.Log(newNPC);
             NPCs.Add(newNPC);
         }
     }

@@ -41,9 +41,11 @@ public class PlayerScript : MonoBehaviour
         {
             if (!end)
             {
+                var sc = SceneManager.GetActiveScene();
                 Time.timeScale = 0f;
                 end = true;
                 isPaused = true;
+                MusicManager.Instance?.TurnOffMusic();
                 EndObject.SetActive(true);
                 CreateDarkOverlay();
             }
@@ -89,6 +91,7 @@ public class PlayerScript : MonoBehaviour
                 if (Keyboard.current.escapeKey.wasReleasedThisFrame)
                 {
                     PauseGame();
+                    MusicManager.Instance.PauseMusic();
                 }
             }
             else
@@ -99,6 +102,7 @@ public class PlayerScript : MonoBehaviour
                         MenuManager.Instance.CloseSettings();
                     else
                         ResumeGame();
+                        MusicManager.Instance.ResumeMusic();
                 }
             }
         }
