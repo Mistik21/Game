@@ -4,7 +4,7 @@ public class SoundEffectsManager : MonoBehaviour
 {
     public static SoundEffectsManager Instance;
     public AudioSource sfxSource;
-
+    //пока (или не пока) громкость меняется только через инспектор в менеджере звуков
     public AudioClip roomEnterSound;
     public float roomEnterVolume = 0.5f;
 
@@ -100,7 +100,6 @@ public class SoundEffectsManager : MonoBehaviour
         
         lastPlayedClip = clip;
         lastPlayedTime = Time.time;
-        Debug.Log($"Попытка проиграть: {clip.name}, volume={volume}, userVolume={userVolume}, итого={volume * userVolume}");
         sfxSource.PlayOneShot(clip, volume * userVolume);
     }
     
