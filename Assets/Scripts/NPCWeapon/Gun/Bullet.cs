@@ -24,6 +24,7 @@ namespace GunNPC
             if (other.CompareTag("Player"))
             {
                 PlayerScript player = other.GetComponent<PlayerScript>();
+                SoundEffectsManager.Instance.PlayHurt();
                 player.Hp -= damage;
                 player.FlashRed(0.1f); // 0.1 секунды = 100 миллисекунд
                 Destroy(gameObject);
