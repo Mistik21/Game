@@ -56,6 +56,7 @@ public class RoomScript : MonoBehaviour
             enabled = false;
 
             MusicManager.Instance.ExitCombat();
+            SoundEffectsManager.Instance.PlayRoomClear();
             
             foreach(var door in Doors)
             {
