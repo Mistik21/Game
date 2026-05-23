@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance;
     public bool isSettingsOpen = false;
     public GameObject SettingsPanel;
+    public GameObject Info;
 
     void Start()
     {
@@ -48,6 +49,14 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Continue Game");
         GameObject.FindWithTag("Player").GetComponent<PlayerScript>().ResumeGame();
+    }
+    public void InformationGame()
+    {
+        Info.SetActive(true);
+    }
+    public void CloseInformationGame()
+    {
+        Info.SetActive(false);
     }
 
     public void OpenSettings()
