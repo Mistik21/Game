@@ -104,6 +104,7 @@ public class StartGameSpavn : MonoBehaviour
     private void ActivateEndWinUI()
     {
         // Находим все объекты, включая выключенные на сцене
+        
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         
         foreach (GameObject obj in allObjects)
@@ -117,5 +118,6 @@ public class StartGameSpavn : MonoBehaviour
                 break; // Нашли — включаем и выходим
             }
         }
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }

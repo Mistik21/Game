@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     public bool isSettingsOpen = false;
     public GameObject SettingsPanel;
     public GameObject Info;
+    public Texture2D myCustomCursor;
 
     void Start()
     {
@@ -49,6 +50,7 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Continue Game");
         GameObject.FindWithTag("Player").GetComponent<PlayerScript>().ResumeGame();
+        Cursor.SetCursor(myCustomCursor, new Vector2(32, 32), CursorMode.Auto);
     }
     public void InformationGame()
     {

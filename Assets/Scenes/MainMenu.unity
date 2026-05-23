@@ -1349,6 +1349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d52c377fb1ed241839d46c3a04c5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
+  myCustomCursor: {fileID: 2800000, guid: e7e87f50c8ff1154191dcf12c09b520d, type: 3}
 --- !u!4 &1772938301
 Transform:
   m_ObjectHideFlags: 0

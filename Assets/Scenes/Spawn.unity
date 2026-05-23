@@ -4348,7 +4348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 153.5, y: 49.2}
+  m_AnchoredPosition: {x: 202.5, y: 83.27}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1018833031
@@ -6262,6 +6262,7 @@ MonoBehaviour:
   isSettingsOpen: 0
   SettingsPanel: {fileID: 414062230}
   Info: {fileID: 1076550540}
+  myCustomCursor: {fileID: 2800000, guid: e7e87f50c8ff1154191dcf12c09b520d, type: 3}
 --- !u!4 &1419635621
 Transform:
   m_ObjectHideFlags: 0
@@ -7708,8 +7709,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.89690006, y: -0.7161, z: 0}
-    m_Extent: {x: 2.5333, y: 0.959, z: 0}
+    m_Center: {x: 2.5461, y: -0.8384, z: 0}
+    m_Extent: {x: 4.2144, y: 1.524, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7720,10 +7721,10 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -1.1316627, y: -1.1741914, z: -0.000000026771886}
-  - {x: 2.919836, y: -1.1587565, z: -0.000000026771886}
-  - {x: 2.9312236, y: -0.26264122, z: -0.000000026771886}
-  - {x: -1.1357127, y: -0.25756866, z: -0.000000026771886}
+  - {x: -1.1476449, y: -1.8614826, z: -0.00000040521263}
+  - {x: 6.2603917, y: -1.8620322, z: -0.00000040521263}
+  - {x: 6.2398114, y: 0.1848972, z: -0.00000040521263}
+  - {x: -1.167681, y: 0.1580026, z: -0.00000040521263}
 --- !u!1 &1818074510
 GameObject:
   m_ObjectHideFlags: 0
@@ -8732,9 +8733,17 @@ PrefabInstance:
       propertyPath: EndObject
       value: 
       objectReference: {fileID: 563231379}
+    - target: {fileID: 5625219245181319601, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
+      propertyPath: myCustomCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: e7e87f50c8ff1154191dcf12c09b520d, type: 3}
     - target: {fileID: 7232526618631170234, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660733863672237455, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
+      propertyPath: attackRate
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

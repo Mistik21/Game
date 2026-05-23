@@ -3628,7 +3628,11 @@ PrefabInstance:
     - target: {fileID: 5625219245181319601, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: EndObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 938401139}
+    - target: {fileID: 5625219245181319601, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
+      propertyPath: myCustomCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: e7e87f50c8ff1154191dcf12c09b520d, type: 3}
     - target: {fileID: 7232526618631170234, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5350,8 +5354,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.89690006, y: -0.7161, z: 0}
-    m_Extent: {x: 2.5333, y: 0.959, z: 0}
+    m_Center: {x: 2.5590498, y: -0.8159499, z: 0}
+    m_Extent: {x: 4.2448497, y: 1.53035, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5362,10 +5366,10 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -1.1316627, y: -1.1741914, z: -0.000000026771886}
-  - {x: 2.919836, y: -1.1587565, z: -0.000000026771886}
-  - {x: 2.9312236, y: -0.26264122, z: -0.000000026771886}
-  - {x: -1.1357127, y: -0.25756866, z: -0.000000026771886}
+  - {x: -1.1860809, y: -1.8453625, z: -0.00000040521263}
+  - {x: 6.239411, y: -1.8299279, z: -0.00000040521263}
+  - {x: 6.3052163, y: 0.17271283, z: -0.00000040521263}
+  - {x: -1.1719939, y: 0.21406518, z: -0.00000040521263}
 --- !u!1 &1173232624
 GameObject:
   m_ObjectHideFlags: 0
@@ -8914,8 +8918,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
   isSettingsOpen: 0
-  SettingsPanel: {fileID: 0}
+  SettingsPanel: {fileID: 1438597367}
   Info: {fileID: 738535400}
+  myCustomCursor: {fileID: 2800000, guid: e7e87f50c8ff1154191dcf12c09b520d, type: 3}
 --- !u!4 &1512736932
 Transform:
   m_ObjectHideFlags: 0
@@ -10614,7 +10619,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1512736931}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: CloseSettings
         m_Mode: 1
