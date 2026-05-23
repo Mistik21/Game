@@ -32,6 +32,7 @@ namespace RiflePlayer
             currentAmmo = maxAmmo;
             mainCamera = Camera.main;
             type = "M";
+            scl = new float[3]{0.3f,0.85f,1};
 
             if (firePoint == null) firePoint = transform;
         }

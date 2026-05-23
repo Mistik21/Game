@@ -18,6 +18,7 @@ public class InventoryView : MonoBehaviour
     public GameObject ViewCount2;
     public GameObject ViewCountReal1;
     public GameObject ViewCountReal2;
+    public Sprite SwordPrefab;
     private int indexReloading = -1;
     void Start()
     {
@@ -29,6 +30,13 @@ public class InventoryView : MonoBehaviour
     {
         
         var inventory=Player.GetComponent<inventory>().Inventory;
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            View2Image.GetComponent<Image>().fillAmount = 0f;
+            indexReloading = -1;
+            View1Image.GetComponent<Image>().fillAmount = 0f;
+            indexReloading = -1;
+        }
         if (Player.GetComponent<inventory>().IndexInventory()==0)
         {
             if (indexReloading == 1)
@@ -36,7 +44,8 @@ public class InventoryView : MonoBehaviour
                 View2Image.GetComponent<Image>().fillAmount = 0f;
                 indexReloading = -1;
             }
-            GetComponent<SpriteRenderer>().sprite=Resources.Load<Sprite>("Инвентарь/Инвентарь_левый_слот");;
+            // Убираем ".png" на конце и используем generic-версию <Texture>
+            GetComponent<RawImage>().texture = Resources.Load<Texture>("Инвентарь/Инвентарь_левый_слот");
         }
         else if (Player.GetComponent<inventory>().IndexInventory()==1)
         {
@@ -45,39 +54,46 @@ public class InventoryView : MonoBehaviour
                 View1Image.GetComponent<Image>().fillAmount = 0f;
                 indexReloading = -1;
             }
-            GetComponent<SpriteRenderer>().sprite=Resources.Load<Sprite>("Инвентарь/Инвентарь_правый_слот");;
+            GetComponent<RawImage>().texture = Resources.Load<Texture>("Инвентарь/Инвентарь_правый_слот");
         }
         
-        var view1Render = View1.GetComponent<SpriteRenderer>();
-        var view2Render = View2.GetComponent<SpriteRenderer>();
+        var view1Render = View1.GetComponent<Image>();
+        var view2Render = View2.GetComponent<Image>();
         if (inventory[0])
         {
             ViewCount1.SetActive(true);
             view1Render.sprite=inventory[0].GetComponent<SpriteRenderer>().sprite;
-            view1Render.transform.localScale=inventory[0].transform.localScale;;
+            var color = view1Render.color;
+            color.a = 255;
+            view1Render.color = color;
+
             var weapon = inventory[0].GetComponent<BaseWeapon>();
             if (weapon && weapon.type == "P")
             {
+                view1Render.GetComponent<RectTransform>().localScale = new Vector3(weapon.scl[0], weapon.scl[1], weapon.scl[2]);
                 ViewCountReal1.SetActive(true);
                 Transform childTransform1 = ViewCountReal1.transform.Find("Text (TMP)");
                 childTransform1.gameObject.GetComponent<TextMeshProUGUI>().text=weapon.currentAmmo.ToString();
                 Transform childTransform = ViewCount1.transform.Find("Text (TMP)");
                 childTransform.gameObject.GetComponent<TextMeshProUGUI>().text=weapon.ammoPerReload.ToString();
                 ViewType1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Pixel Guns 2D/Guns/Bullets/Button 12");
-                ViewType1.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
+                ViewType1.transform.localScale = new Vector3(0.75f, 0.75f, 1f)*60;
                 ViewType1.GetComponent<SpriteRenderer>().color=Color.white;
             }
             else if (weapon && weapon.type == "M")
             {
+                view1Render.GetComponent<RectTransform>().localScale = new Vector3(weapon.scl[0], weapon.scl[1], weapon.scl[2]);
                 ViewCountReal1.SetActive(false);
                 Transform childTransform = ViewCount1.transform.Find("Text (TMP)");
                 childTransform.gameObject.GetComponent<TextMeshProUGUI>().text=weapon.ammoPerReload.ToString();
                 ViewType1.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Pixel Guns 2D/Guns/Bullets/Button 12");
                 ViewType1.GetComponent<SpriteRenderer>().color = Color.blue;
-                ViewType1.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
+                ViewType1.transform.localScale = new Vector3(0.75f, 0.75f, 1f)*60;
             }
             else
             {
+                view1Render.sprite=SwordPrefab;
+                view1Render.GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.8f, 1);
                 ViewCountReal1.SetActive(false);
                 Transform childTransform = ViewCount1.transform.Find("Text (TMP)");
                 childTransform.gameObject.GetComponent<TextMeshProUGUI>().text = "0";
@@ -92,38 +108,50 @@ public class InventoryView : MonoBehaviour
             View1Image.GetComponent<Image>().fillAmount = 0f;
             ViewType1.GetComponent<SpriteRenderer>().sprite = null;
             ViewType1.GetComponent<SpriteRenderer>().color=Color.white;
-            indexReloading = -1;
+            if (indexReloading == 0)
+            {
+                indexReloading = -1;
+            }
             view1Render.sprite=null;
+            var color = view1Render.color;
+            color.a = 0;
+            view1Render.color = color;
             view1Render.transform.localScale=new Vector3(1,1,1);
         }
         if (inventory[1])
         {
             ViewCount2.SetActive(true);
             view2Render.sprite=inventory[1].GetComponent<SpriteRenderer>().sprite;
-            view2Render.transform.localScale=inventory[1].transform.localScale;;
+            var color = view2Render.color;
+            color.a = 255;
+            view2Render.color = color;
             var weapon = inventory[1].GetComponent<BaseWeapon>();
             if (weapon && weapon.type == "P")
             {
+                view2Render.GetComponent<RectTransform>().localScale = new Vector3(weapon.scl[0], weapon.scl[1], weapon.scl[2]);
                 ViewCountReal2.SetActive(true);
                 Transform childTransform1 = ViewCountReal2.transform.Find("Text (TMP)");
                 childTransform1.gameObject.GetComponent<TextMeshProUGUI>().text=weapon.currentAmmo.ToString();
                 Transform childTransform = ViewCount2.transform.Find("Text (TMP)");
                 childTransform.gameObject.GetComponent<TextMeshProUGUI>().text=weapon.ammoPerReload.ToString();
                 ViewType2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Pixel Guns 2D/Guns/Bullets/Button 12");
-                ViewType2.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
+                ViewType2.transform.localScale = new Vector3(0.75f, 0.75f, 1f)*60;
                 ViewType2.GetComponent<SpriteRenderer>().color=Color.white;
             }
             else if (weapon && weapon.type == "M")
             {
+                view2Render.GetComponent<RectTransform>().localScale = new Vector3(weapon.scl[0], weapon.scl[1], weapon.scl[2]);
                 ViewCountReal2.SetActive(false);
                 Transform childTransform = ViewCount2.transform.Find("Text (TMP)");
                 childTransform.gameObject.GetComponent<TextMeshProUGUI>().text=weapon.ammoPerReload.ToString();
                 ViewType2.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Pixel Guns 2D/Guns/Bullets/Button 12");
                 ViewType2.GetComponent<SpriteRenderer>().color = Color.blue;
-                ViewType2.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
+                ViewType2.transform.localScale = new Vector3(0.75f, 0.75f, 1f)*60;
             }
             else
             {
+                view2Render.sprite=SwordPrefab;
+                view2Render.GetComponent<RectTransform>().localScale = new Vector3(0.5f, 0.8f, 1);
                 ViewCountReal2.SetActive(false);
                 Transform childTransform = ViewCount2.transform.Find("Text (TMP)");
                 childTransform.gameObject.GetComponent<TextMeshProUGUI>().text="0";
@@ -135,11 +163,17 @@ public class InventoryView : MonoBehaviour
         {
             ViewCountReal2.SetActive(false);
             ViewCount2.SetActive(false);
-            View1Image.GetComponent<Image>().fillAmount = 0f;
-            indexReloading = -1;
+            View2Image.GetComponent<Image>().fillAmount = 0f;
+            if (indexReloading == 1)
+            {
+                indexReloading = -1;
+            }
             ViewType2.GetComponent<SpriteRenderer>().sprite = null;
             ViewType2.GetComponent<SpriteRenderer>().color=Color.white;
             view2Render.sprite=null;
+            var color = view2Render.color;
+            color.a = 0;
+            view2Render.color = color;
             view2Render.transform.localScale=new Vector3(1,1,1);
         }
     }
