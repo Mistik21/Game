@@ -25,6 +25,7 @@ namespace GunPlayer
             currentAmmo = maxAmmo;
             mainCamera = Camera.main;
             type = "P";
+            scl = new float[3]{0.6f,0.7f,1};
 
             if (firePoint == null)
                 firePoint = transform;

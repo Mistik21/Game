@@ -6,22 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Levels/Level1.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: c9606307de580c3418f3e872f8e6ae77
   - enabled: 1
     path: Assets/Scenes/Spawn.unity
     guid: 0d1a0c583cbf1e74bb4b581e10c4769d
   - enabled: 1
+    path: Assets/Scenes/Training.unity
+    guid: 5f621771707f12e469fa23a6a7c988dc
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
     path: Assets/Scenes/Levels/Level2.unity
     guid: 298b8b68fa43f37468cf29db4dafe153
   - enabled: 1
     path: Assets/Scenes/Levels/Level3.unity
     guid: e735d3bd294f1de4aace66252a617149
-  - enabled: 1
-    path: Assets/Scenes/Training.unity
-    guid: 5f621771707f12e469fa23a6a7c988dc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

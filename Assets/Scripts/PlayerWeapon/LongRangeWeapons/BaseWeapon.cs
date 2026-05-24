@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RiflePlayer
@@ -29,5 +30,6 @@ namespace RiflePlayer
         public int price=20;
         public GameObject typeView;
         public string type;
+        public float[] scl;
     }
 }

@@ -111,7 +111,7 @@ MonoBehaviour:
   Animation: {fileID: 6765088585438755741}
   damage: 25
   attackRange: 1
-  attackRate: 1
+  attackRate: 0.3
   attackPoint: {fileID: 4533218981177550552}
   enemyLayers:
     serializedVersion: 2

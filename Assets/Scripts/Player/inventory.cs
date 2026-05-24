@@ -94,6 +94,7 @@ public class inventory : MonoBehaviour
                 {
                     if (nearbyEnemies[0].GetComponent<BaseWeapon>().price <= GetComponent<PlayerScript>().Money)
                     {
+                        SoundEffectsManager.Instance?.PlayItemPurchase();
                         GetComponent<PlayerScript>().Money -= nearbyEnemies[0].GetComponent<BaseWeapon>().price;
                         nearbyEnemies[0].GetComponent<BaseWeapon>().sale = false;
                     }
@@ -103,6 +104,7 @@ public class inventory : MonoBehaviour
                     }
                 }
                 
+                SoundEffectsManager.Instance?.PlayWeaponPickup();
 
                 if (Inventory[indexInventary])
                 {

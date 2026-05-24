@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     public bool end=false;
     public GameObject EndObject;
     public List<string> Levels;
+    public Texture2D myCustomCursor;
 
 
     void Start()
@@ -46,6 +47,7 @@ public class PlayerScript : MonoBehaviour
                 end = true;
                 isPaused = true;
                 MusicManager.Instance?.TurnOffMusic();
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                 EndObject.SetActive(true);
                 CreateDarkOverlay();
             }
@@ -90,6 +92,7 @@ public class PlayerScript : MonoBehaviour
 
                 if (Keyboard.current.escapeKey.wasReleasedThisFrame)
                 {
+                    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                     PauseGame();
                     MusicManager.Instance.PauseMusic();
                 }
@@ -101,8 +104,11 @@ public class PlayerScript : MonoBehaviour
                     if (MenuManager.Instance != null && MenuManager.Instance.isSettingsOpen)
                         MenuManager.Instance.CloseSettings();
                     else
+                    {
+                        Cursor.SetCursor(myCustomCursor, new Vector2(32, 32), CursorMode.Auto);
                         ResumeGame();
                         MusicManager.Instance.ResumeMusic();
+                    }
                 }
             }
         }
