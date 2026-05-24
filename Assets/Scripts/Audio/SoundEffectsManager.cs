@@ -103,8 +103,9 @@ public class SoundEffectsManager : MonoBehaviour
         sfxSource.PlayOneShot(clip, volume * userVolume);
     }
     
-    public void SetVolume(float volume)
+    public void SetSFXVolume(float volume)
     {
         userVolume = volume;
+        PlayerPrefs.SetFloat("SFXVolume", volume);
     }
 }
