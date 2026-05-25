@@ -15,6 +15,7 @@ public class TrigerDoorBoosScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             MusicManager.Instance.EnterCombat();
+            SoundEffectsManager.Instance.PlayRoomEnter();
             
             foreach(var door in Doors)
             {

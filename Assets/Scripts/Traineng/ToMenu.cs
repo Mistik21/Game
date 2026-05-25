@@ -7,6 +7,7 @@ public class ToMenu : MonoBehaviour
    public void ToMenuEnd()
     {
         Time.timeScale = 1f;
+        MusicManager.Instance?.TurnOffMusic();
         SceneManager.LoadScene("MainMenu");
     }
 }
