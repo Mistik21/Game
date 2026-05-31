@@ -83,7 +83,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 11
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4227708997261114778, guid: 7314a75df6dc4d34e9b329abed591405, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -127,6 +127,7 @@ MonoBehaviour:
   price: 20
   typeView: {fileID: 0}
   type: 
+  scl: []
   bulletsPerShot: 10
   spreadAngle: 25
   visualAngleOffset: -90
@@ -184,16 +185,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6151416572022341320}
-  m_LocalRotation: {x: -0, y: -0, z: 0.70759165, w: 0.7066216}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 19.91946, y: 16.411816, z: 2.6254885}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2790711865742499809}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.079}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.59, y: -0}
+  m_AnchoredPosition: {x: -2.2, y: -0.16}
   m_SizeDelta: {x: 0.4923, y: 0.1286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4132367893077542569

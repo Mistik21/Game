@@ -17,7 +17,7 @@ namespace GunNPC
 
         void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Wall"))
+            if (other.CompareTag("Wall") || other.CompareTag("Door"))
             {
                 Destroy(gameObject);
             }

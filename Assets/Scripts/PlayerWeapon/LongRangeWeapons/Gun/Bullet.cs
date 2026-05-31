@@ -18,7 +18,7 @@ namespace GunPlayer
         void OnTriggerEnter2D(Collider2D other)
         {
             // Проверяем, не попала ли пуля в стену
-            if (other.CompareTag("Wall"))
+            if (other.CompareTag("Wall") || other.CompareTag("Door"))
             {
                 Destroy(gameObject);
             }

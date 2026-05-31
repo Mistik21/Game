@@ -109,7 +109,14 @@ public class inventory : MonoBehaviour
                 if (Inventory[indexInventary])
                 {
                     Inventory[indexInventary].transform.parent = null;
-                    Inventory[indexInventary].GetComponent<DestrouTransfer>().enabled = true;
+                    try
+                    {
+                        Inventory[indexInventary].GetComponent<DestrouTransfer>().enabled = true;
+                    }
+                    catch (Exception e)
+                    {
+                        var t = 0;
+                    }
                 }
 
                 Inventory[indexInventary] = nearbyEnemies[0];

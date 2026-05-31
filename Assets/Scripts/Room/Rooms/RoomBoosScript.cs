@@ -76,8 +76,10 @@ public class RoomBoosScript : MonoBehaviour
         if (spawnPoint != Vector3.zero)
         {
             GameObject newNPC = Instantiate(PrefabNPC, spawnPoint, Quaternion.identity);
+            newNPC.GetComponent<SpriteRenderer>().flipX = true;
             Debug.Log(newNPC);
             NPCs.Add(newNPC);
+            
         }
     }
 
