@@ -8,7 +8,7 @@ public class BookHPScript : MonoBehaviour
     public float detectionRange = 1.3f;
     public List<GameObject> nearbyEnemies = new List<GameObject>();
     public GameObject InformationBlock;
-    public int price = 20;
+    public int price = 10;
 
     void Start()
     {

@@ -109,9 +109,7 @@ MonoBehaviour:
   bulletForce: 11.5
   bulletPrefab: {fileID: 2209259742136637175, guid: e83da62fb6176984c88cc60de6a5bc51, type: 3}
   firePoint: {fileID: 576749948128932661}
-  maxAmmo: 30
   currentAmmo: 0
-  ammoPerReload: 30
 --- !u!1 &5359942296138470047
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,8 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0f1a512e9ae824c8626cfe1c89aa97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCScript
-  Hp: 100
+  Hp: 80
   MinDistanceToPlayer: 3
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &6709953336353055955
 Rigidbody2D:
   serializedVersion: 5

@@ -7,7 +7,7 @@ namespace GunNPC
     {
         [Header("Настройки атаки")]
         [SerializeField] private float attackRange = 1.8f;
-        [SerializeField] private float attackDamage = 20f;
+        [SerializeField] private float attackDamage = 15f;
         [SerializeField] private float attackCooldown = 1f;
         
         [Header("Ссылки")]

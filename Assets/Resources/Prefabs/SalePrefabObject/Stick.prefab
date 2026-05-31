@@ -124,7 +124,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   currentWeaponAngle: 0
   sale: 1
-  price: 20
+  price: 35
   typeView: {fileID: 0}
   type: 
   scl: []

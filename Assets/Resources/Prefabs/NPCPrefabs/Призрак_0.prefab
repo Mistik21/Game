@@ -109,8 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0f1a512e9ae824c8626cfe1c89aa97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCScript
-  Hp: 100
+  Hp: 50
   MinDistanceToPlayer: 4
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &1069507981013584755
 Animator:
   serializedVersion: 7
@@ -272,9 +275,9 @@ MonoBehaviour:
   fireRate: 10
   bulletForce: 11.5
   bulletsPerShot: 10
-  spreadAngle: 45
   bulletPrefab: {fileID: 2209259742136637175, guid: e83da62fb6176984c88cc60de6a5bc51, type: 3}
   firePoint: {fileID: 0}
   maxAmmo: 10
   currentAmmo: 0
   ammoPerReload: 10
+  initialReloadDelay: 1.5

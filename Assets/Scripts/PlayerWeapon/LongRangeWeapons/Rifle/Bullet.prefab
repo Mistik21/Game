@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 6137328238259071378}
   - component: {fileID: 699569156364943898}
   - component: {fileID: 4627350809848643046}
-  - component: {fileID: 6575653806422921260}
+  - component: {fileID: 4846279211368660174}
   m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
@@ -287,7 +287,7 @@ PolygonCollider2D:
       - {x: 0.26999998, y: 0.114999995}
       - {x: 0.11, y: 0.195}
   m_UseDelaunayMesh: 1
---- !u!114 &6575653806422921260
+--- !u!114 &4846279211368660174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,8 +296,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8459819547289375218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ed966d4271b4b44eae3815e56fe7d11, type: 3}
+  m_Script: {fileID: 11500000, guid: e33ac08abde544a7ae1c6d3f7efd3bd8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gun.Bullet
-  damage: 10
+  m_EditorClassIdentifier: Assembly-CSharp::RiflePlayer.Bullet
+  damage: 14
   lifetime: 3

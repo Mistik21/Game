@@ -10,7 +10,7 @@ public class HPScript : MonoBehaviour
     public float detectionRange = 1.3f;
     public List<GameObject> nearbyEnemies = new List<GameObject>();
     public GameObject InformationBlock;
-    public int price=20;
+    public int price=5;
     void Start()
     {
         

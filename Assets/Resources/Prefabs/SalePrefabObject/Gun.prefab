@@ -350,9 +350,10 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   currentWeaponAngle: 0
   sale: 1
-  price: 20
+  price: 10
   typeView: {fileID: 0}
   type: 
+  scl: []
 --- !u!114 &5382431541695492424
 MonoBehaviour:
   m_ObjectHideFlags: 0

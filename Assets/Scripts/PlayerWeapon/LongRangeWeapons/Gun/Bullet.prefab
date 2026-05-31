@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed966d4271b4b44eae3815e56fe7d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  damage: 10
+  damage: 18
   lifetime: 3
 --- !u!60 &4500487614076142188
 PolygonCollider2D:

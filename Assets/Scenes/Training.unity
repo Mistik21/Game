@@ -6233,10 +6233,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6151416572022341320, guid: 5c6dcfa7ee70592408047eac1f6e58a4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c6dcfa7ee70592408047eac1f6e58a4, type: 3}
 --- !u!1 &862561146
 GameObject:
@@ -9253,6 +9250,14 @@ PrefabInstance:
     - target: {fileID: 1682063645805522713, guid: 7dd5cf5ecbbc0764b92ccfead772fb7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -14.883
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206217990154581935, guid: 7dd5cf5ecbbc0764b92ccfead772fb7c, type: 3}
+      propertyPath: damage
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206217990154581935, guid: 7dd5cf5ecbbc0764b92ccfead772fb7c, type: 3}
+      propertyPath: attackRate
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

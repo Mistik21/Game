@@ -109,8 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0f1a512e9ae824c8626cfe1c89aa97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCScript
-  Hp: 100
+  Hp: 30
   MinDistanceToPlayer: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &8016763934713177820
 Animator:
   serializedVersion: 7
@@ -307,6 +310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunNPC.ZombieAttack
   attackRange: 1.8
-  attackDamage: 20
-  attackCooldown: 1
+  attackDamage: 15
+  attackCooldown: 2
   playerTag: Player

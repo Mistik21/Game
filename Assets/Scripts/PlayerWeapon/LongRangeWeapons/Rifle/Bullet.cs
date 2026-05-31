@@ -6,7 +6,7 @@ namespace RiflePlayer
 {
     public class Bullet : MonoBehaviour
     {
-        [Header("Настройки пули")] public float damage = 10f; // Урон
+        [Header("Настройки пули")] public float damage = 14f; // Урон
         public float lifetime = 3f; // Время жизни пули
 
         void Start()

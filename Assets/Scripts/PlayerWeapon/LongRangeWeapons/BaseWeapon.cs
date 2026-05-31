@@ -27,7 +27,7 @@ namespace RiflePlayer
         public Camera mainCamera;
         public float currentWeaponAngle;
         public bool sale;
-        public int price=20;
+        public int price;
         public GameObject typeView;
         public string type;
         public float[] scl;

@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0f1a512e9ae824c8626cfe1c89aa97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCScript
-  Hp: 100
+  Hp: 250
   MinDistanceToPlayer: 4
   wallLayer:
     serializedVersion: 2
