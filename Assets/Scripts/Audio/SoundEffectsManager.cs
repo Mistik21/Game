@@ -29,6 +29,27 @@ public class SoundEffectsManager : MonoBehaviour
     public AudioClip teleportSound;
     public float teleportVolume = 0.5f;
 
+    public AudioClip emptyMagazineSound;
+    public float emptyMagazineVolume = 0.5f;
+
+    public AudioClip reloadPistolSound;
+    public float reloadPistolVolume = 0.5f;
+
+    public AudioClip reloadRifleSound;
+    public float reloadRifleVolume = 0.5f;
+
+    public AudioClip reloadStaffSound;
+    public float reloadStaffVolume = 0.5f;
+
+    public AudioClip shotPistolSound;
+    public float shotPistolVolume = 0.5f;
+
+    public AudioClip shotRifleSound;
+    public float shotRifleVolume = 0.5f;
+
+    public AudioClip shotStaffSound;
+    public float shotStaffVolume = 0.5f;
+
     private float userVolume = 0.7f;
     private AudioClip lastPlayedClip;
 
@@ -86,12 +107,47 @@ public class SoundEffectsManager : MonoBehaviour
         PlaySound(teleportSound, teleportVolume);
     }
 
+    public void PlayEmptyMagazine()
+    {
+        PlaySound(emptyMagazineSound, emptyMagazineVolume);
+    }
+
+    public void PlayReloadPistol()
+    {
+        PlaySound(reloadPistolSound, reloadPistolVolume);
+    }
+
+    public void PlayReloadRifle()
+    {
+        PlaySound(reloadRifleSound, reloadRifleVolume);
+    }
+
+    public void PlayReloadStaff()
+    {
+        PlaySound(reloadStaffSound, reloadStaffVolume);
+    }
+
+    public void PlayShotPistol()
+    {
+        PlaySound(shotPistolSound, shotPistolVolume);
+    }
+
+    public void PlayShotRifle()
+    {
+        PlaySound(shotRifleSound, shotRifleVolume);
+    }
+
+public void PlayShotStaff()
+{
+    PlaySound(shotStaffSound, shotStaffVolume);
+}
+
     void Start()
     {
         userVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
     }
     
-    public void PlaySound(AudioClip clip, float volume, float minInterval = 0.2f)
+    public void PlaySound(AudioClip clip, float volume, float minInterval = 0.05f)
     {
         if (clip == null || sfxSource == null) return;
         

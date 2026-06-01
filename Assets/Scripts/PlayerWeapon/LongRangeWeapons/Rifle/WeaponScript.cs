@@ -8,6 +8,7 @@ namespace RiflePlayer
 {
     public class WeaponScript : BaseWeapon
     {
+        private bool emptyClickPlayed = false;
         void Start()
         {
             bulletForce = 20f;
@@ -32,6 +33,9 @@ namespace RiflePlayer
         {
             if (Time.timeScale != 0f)
             {
+                if (Mouse.current.leftButton.wasReleasedThisFrame)
+                    emptyClickPlayed = false;
+
                 Transform parentTransform = transform.parent;
                 if (parentTransform && !sale)
                 {
@@ -112,13 +116,21 @@ namespace RiflePlayer
         {
             if (Time.time < nextTimeToFire)
                 return;
-
             if (currentAmmo <= 0)
+            {
+                if (!emptyClickPlayed)
+                {
+                    emptyClickPlayed = true;
+                    SoundEffectsManager.Instance?.PlayEmptyMagazine();
+                }
                 return;
+            }
 
+            emptyClickPlayed = false;
             nextTimeToFire = Time.time + fireRate;
             currentAmmo--;
             SpawnBullet();
+            SoundEffectsManager.Instance?.PlayShotRifle();
         }
 
         void SpawnBullet()
@@ -168,6 +180,7 @@ namespace RiflePlayer
 
         IEnumerator Reload()
         {
+            SoundEffectsManager.Instance?.PlayReloadRifle();
             isReloading = true;
             yield return new WaitForSeconds(reloadTime);
             int ammoToAdd = Mathf.Min(ammoPerReload, totalAmmo);
