@@ -2357,6 +2357,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563231379}
   m_CullTransparentMesh: 1
+--- !u!1 &584526286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1964420945226265199, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
+  m_PrefabInstance: {fileID: 6314584930386144253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &587955442
 GameObject:
   m_ObjectHideFlags: 0
@@ -5415,7 +5420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 202.5, y: 83.27}
+  m_AnchoredPosition: {x: 156, y: 50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1018833031
@@ -5643,7 +5648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7140012161846767402, guid: 356d2ed245beebe46a675ee34a36048a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7322473273760139638, guid: 356d2ed245beebe46a675ee34a36048a, type: 3}
       propertyPath: sale
@@ -12309,9 +12314,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 913856874458083177, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
-      propertyPath: 'Inventory.Array.data[1]'
+      propertyPath: 'Inventory.Array.data[0]'
       value: 
       objectReference: {fileID: 2093047377}
+    - target: {fileID: 913856874458083177, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
+      propertyPath: 'Inventory.Array.data[1]'
+      value: 
+      objectReference: {fileID: 584526286}
+    - target: {fileID: 1964420945226265199, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3878419092917451275, guid: cc8256deeaa0efd429e2e37107964cd9, type: 3}
       propertyPath: globalLight
       value: 
