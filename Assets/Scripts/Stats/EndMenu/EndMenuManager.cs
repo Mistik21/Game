@@ -8,6 +8,7 @@ public class EndMenuManager : MonoBehaviour
     public List<GameObject> dels;
     public GameObject canvas;
     public GameObject player;
+    public Texture2D myCustomCursor;
     
     public void ExitToSpavn()
     {
@@ -40,7 +41,7 @@ public class EndMenuManager : MonoBehaviour
             // Даём Unity время на обработку
             yield return null;
         }
-        
+        Cursor.SetCursor(myCustomCursor, new Vector2(32, 32), CursorMode.Auto);
         SceneManager.LoadScene("Spawn");
         foreach (GameObject obj in dels)
         {

@@ -4355,6 +4355,7 @@ MonoBehaviour:
   - {fileID: 587955442}
   canvas: {fileID: 1675884295}
   player: {fileID: 1930744211}
+  myCustomCursor: {fileID: 2800000, guid: e7e87f50c8ff1154191dcf12c09b520d, type: 3}
 --- !u!4 &926377001
 Transform:
   m_ObjectHideFlags: 0
