@@ -8733,6 +8733,20 @@ MonoBehaviour:
   weaponPickupVolume: 0.4
   teleportSound: {fileID: 8300000, guid: ce1f6fbac8f1d7f47a6afb9a3e6324ef, type: 3}
   teleportVolume: 0.4
+  emptyMagazineSound: {fileID: 8300000, guid: 3b8878f953ae3f14a83a3a9a1cc36598, type: 3}
+  emptyMagazineVolume: 0.5
+  reloadPistolSound: {fileID: 8300000, guid: 70dab9c74e388fe49af7b94b5afcc9ac, type: 3}
+  reloadPistolVolume: 0.5
+  reloadRifleSound: {fileID: 8300000, guid: 7e843ba14504e8b479e3be1c68594ee1, type: 3}
+  reloadRifleVolume: 0.5
+  reloadStaffSound: {fileID: 8300000, guid: 2d48c2bb6ad969a4889afa29865264ab, type: 3}
+  reloadStaffVolume: 0.5
+  shotPistolSound: {fileID: 8300000, guid: 89ed140cccd263b4ca56ac4f4ac423a6, type: 3}
+  shotPistolVolume: 0.5
+  shotRifleSound: {fileID: 8300000, guid: 6f3155a6187a9684395ef3666e357bbd, type: 3}
+  shotRifleVolume: 0.5
+  shotStaffSound: {fileID: 8300000, guid: 86bcf44bd8ab4524e9de6ca8ad16d6fc, type: 3}
+  shotStaffVolume: 0.5
 --- !u!4 &1441888694
 Transform:
   m_ObjectHideFlags: 0

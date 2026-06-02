@@ -8,6 +8,8 @@ namespace RiflePlayer
 {
     public class WallWeapon : BaseWeapon
     {
+        private bool emptyClickPlayed = false;
+
         [Header("Настройки веерной стрельбы")]
         public int bulletsPerShot = 10;
         public float spreadAngle = 12f;
@@ -47,6 +49,9 @@ namespace RiflePlayer
             }
             if (Time.timeScale != 0f)
             {
+                if (Mouse.current.leftButton.wasReleasedThisFrame)
+                    emptyClickPlayed = false;
+
                 Transform parentTransform = transform.parent;
                 if (parentTransform && !sale)
                 {
@@ -125,13 +130,24 @@ namespace RiflePlayer
             if (Time.time < nextTimeToFire)
                 return;
             if (currentAmmo <= 0)
+            {
+                if (!emptyClickPlayed)
+                {
+                    emptyClickPlayed = true;
+                    SoundEffectsManager.Instance?.PlayEmptyMagazine();
+                }
                 return;
+            }
+            
+            emptyClickPlayed = false;
+
             if (isReloading) return;
             
             nextTimeToFire = Time.time + fireRate;
             int ammoToSpend = Mathf.Min(bulletsPerShot, currentAmmo);
             currentAmmo -= ammoToSpend;
             SpawnBulletFan();
+            SoundEffectsManager.Instance?.PlayShotStaff();
         }
 
         void SpawnBulletFan()
@@ -201,6 +217,7 @@ namespace RiflePlayer
 
         IEnumerator Reload()
         {
+            SoundEffectsManager.Instance?.PlayReloadStaff();
             isReloading = true;
             yield return new WaitForSeconds(reloadTime);
             int ammoToAdd = bulletsPerShot;

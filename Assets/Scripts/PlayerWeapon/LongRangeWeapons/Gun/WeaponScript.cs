@@ -116,11 +116,15 @@ namespace GunPlayer
                 return;
 
             if (currentAmmo <= 0)
+            {
+                SoundEffectsManager.Instance?.PlayEmptyMagazine();
                 return;
+            }
 
             nextTimeToFire = Time.time + fireRate;
             currentAmmo--;
             SpawnBullet();
+            SoundEffectsManager.Instance?.PlayShotPistol();
         }
 
         void SpawnBullet()
@@ -170,6 +174,7 @@ namespace GunPlayer
 
         IEnumerator Reload()
         {
+            SoundEffectsManager.Instance?.PlayReloadPistol();
             isReloading = true;
             yield return new WaitForSeconds(reloadTime);
             int ammoToAdd = Mathf.Min(ammoPerReload, totalAmmo);
