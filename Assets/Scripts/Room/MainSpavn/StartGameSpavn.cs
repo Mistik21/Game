@@ -51,7 +51,7 @@ public class StartGameSpavn : MonoBehaviour
             {
                 ActivateEndWinUI();
             }
-            else if (GameObject.FindWithTag("Player").GetComponent<PlayerScript>().Levels.Count < 1)
+            else if (GameObject.FindWithTag("Player").GetComponent<PlayerScript>().Levels.Count < 2)
             {
                 if (scenePaths.Count == 0)
                 {

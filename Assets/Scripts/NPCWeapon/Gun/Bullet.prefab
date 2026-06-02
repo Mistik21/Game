@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcd157539aa48d99bb54032c66f2e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunNPC.Bullet
-  damage: 5
+  damage: 3
   lifetime: 3
 --- !u!1 &4296846654065647988
 GameObject:
